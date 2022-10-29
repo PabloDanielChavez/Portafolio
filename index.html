@@ -370,7 +370,7 @@
             </div>
         </section>
 
-        <section class="servicios">
+        <main class="servicios">
             <div class="servicios__header">
                 <h2 class="servicios__titulo"><span class="servicios__span">Nuestros</span>Servicios</h2>
             </div>
@@ -445,7 +445,127 @@
                     <p class="servicios__precio">$30 USD</p>
                 </div>
             </div>
-            <br><br><br><br><br><br>
+        </main>
+
+        <section class="contacto">
+            <div class="contacto__header">
+                <h2 class="contacto__titulo"><span class="servicios__span">¿Quieres hablar conmigo?</span>Contáctame</h2>
+            </div>
+            <div class="contacto__contenido contenedor">
+                <form action="formulario" class="contacto__formulario">
+                    
+                    <fieldset class="contacto__campo">
+                        <legend class="contacto__subtitulo" for="nombre">Nombre</legend>
+                        <input type="text" placeholder="Nombre" class="contacto__input">
+                    </fieldset>
+                    <fieldset class="contacto__campo">
+                        <legend class="contacto__subtitulo" for="nombre">Email</legend>
+                        <input type="email" placeholder="Email" class="contacto__input">
+                    </fieldset>
+                    <fieldset class="contacto__campo">
+                        <legend class="contacto__subtitulo" for="nombre">Mensaje</legend>
+                        <textarea class="contacto__area" name="mensaje" id="mensaje" placeholder="Mensaje"></textarea>
+                    </fieldset>
+                    <input class="contacto__boton" type="button" value="Enviar">
+                    <div class="contacto__imagen">
+                        <a href="https://www.instagram.com/pablo.chavez20/">
+                            <picture>
+                                <source
+                                        srcset="build/img/logos/ig-black.avif" 
+                                        type="image/avif">
+                                <source
+                                        srcset="build/img/logos/ig-black.webp"
+                                        type="image/webp">
+                                <source
+                                        srcset="build/img/logos/ig-black.png" 
+                                        type="image/jpg">
+                                <img class="contacto__img" loading="lazy" decoding="async" src="build/img/logos/ig-black.png" lazyalt="imagen" alt="imagen servicios" width="auto" height="auto">
+                            </picture>
+                        </a>
+                        <a href="https://wa.me/5491166621017">
+                            <picture>
+                                <source
+                                        srcset="build/img/logos/wp-black.avif" 
+                                        type="image/avif">
+                                <source
+                                        srcset="build/img/logos/wp-black.webp"
+                                        type="image/webp">
+                                <source
+                                        srcset="build/img/logos/wp-black.png" 
+                                        type="image/jpg">
+                                <img class="contacto__img" loading="lazy" decoding="async" src="build/img/logos/wp-black.png" lazyalt="imagen" alt="imagen servicios" width="auto" height="auto">
+                            </picture>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCDKL4JLgdmVmmBAJPRGx0Eg/featured">
+                            <picture>
+                                <source
+                                        srcset="build/img/logos/yt-black.avif" 
+                                        type="image/avif">
+                                <source
+                                        srcset="build/img/logos/yt-black.webp"
+                                        type="image/webp">
+                                <source
+                                        srcset="build/img/logos/yt-black.png" 
+                                        type="image/jpg">
+                                <img class="contacto__img" loading="lazy" decoding="async" src="build/img/logos/yt-black.png" lazyalt="imagen" alt="imagen servicios" width="auto" height="auto">
+                            </picture>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="sobremi">
+            <div class="sobremi__header">
+                <h2 class="servicios__titulo"><span class="servicios__span">Conoce más</span>Sobre mí</h2>
+            </div>
+            <div class="sobremi__contenido contenedor">
+                <p class="sobremi__texto">Hola, me llamo Pablo Chavez, Te doy la bienvenida a mi portafolio, Soy programador web front end, Comencé mis estudios el 15 de septiembre de 2022, obtengo mis conocimientos tomando cursos en Udemy, hasta ahora(29 de octubre de 2022) solo completé un curso de HTML y CSS, en la sección de “Proyectos” podrás ver las páginas que hice gracias al curso, y luego en la misma sección encontraras una opción llamada “Trabajos”, los cuales recopila todas las páginas que hice yo mismo, Aclaro que los proyectos los hice yo, pero con ayuda de un curso. También tengo conocimiento de JavaScript, pero en este recién empiezo, tengo conocimientos básicos, pero cada día avanzo un poco más gracias a cursos que tomo en Udemy.</p>
+
+                <div class="sobremi__conocimiento">
+                    <h4 class="sobremi__subcategoria">Conocimiento</h4>
+                    <ul class="sobremi__listado">
+                        <li class="sobremi__opciones">HTML
+                            <ul class="sobremi__listado">
+                                <li class="sobremi__subopciones">BEM</li>
+                                <li class="sobremi__subopciones">BEM</li>
+                            </ul>
+                        </li>
+                        <li class="sobremi__opciones">CSS
+                            <ul class="sobremi__listado">
+                                <li class="sobremi__subopciones">Flexbox y CSS Grid</li>
+                                <li class="sobremi__subopciones">Responsive design</li>
+                                <li class="sobremi__subopciones">SASS</li>
+                            </ul>
+                        </li>
+                        <li class="sobremi__opciones">JS</li>
+                    </ul>
+                </div>
+
+                <div class="sobremi__versiones">
+                    <h4 class="sobremi__subcategoria">Versiones</h4>
+                    <ul class="sobremi__listado">
+                        <li class="sobremi__opciones-ver"><a href="#" class="sobremi__link">0.3A</a>
+                            <ul class="sobremi__listado">
+                                <li class="sobremi__subopciones">Mejoras en todas las secciones</li>
+                                <li class="sobremi__subopciones">Nueva seccion llamada "Servicios"</li>
+                                <li class="sobremi__subopciones">Se comenzo a trabajar con JavaScript en la pagina</li>
+                            </ul>
+                        </li>
+                        <li class="sobremi__opciones-ver"><a href="https://portafolio-pablodanielchavez-02a.netlify.app/" class="sobremi__link">0.2A</a>
+                            <ul class="sobremi__listado">
+                                <li class="sobremi__subopciones">Header simple</li>
+                                <li class="sobremi__subopciones">Secciones simples los cuales contaban con:<br>Sobremi, proyectos, herramientas y Redes o Email</li>
+                            </ul>
+                        </li>
+                        <li class="sobremi__opciones-ver"><a href="https://portafolio-pablodanielchavez-01a.netlify.app/" class="sobremi__link">0.1A</a>
+                            <ul class="sobremi__listado">
+                                <li class="sobremi__subopciones">Pagina Simple el cual permitia llegar a mis proyectos</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
         <footer class="footer">
