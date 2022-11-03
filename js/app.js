@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     inputNombre.value = JSON.parse(localStorage.getItem('Nombre')) || '';
     inputEmail.value = JSON.parse(localStorage.getItem('Email')) || '';
-    inputMensaje.value = JSON.parse(localStorage.getItem('inputMensaje')) || '';
+    inputMensaje.value = JSON.parse(localStorage.getItem('Mensaje')) || '';
     /*                     */
     tipo.addEventListener('change', e => {
         datosBusqueda.tipo = e.target.value;
