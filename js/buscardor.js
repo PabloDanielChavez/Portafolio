@@ -54,9 +54,8 @@ function limpiarHTML() {
 function filtrarProyectos() {
     const proyectos = pry.filter(filtrarTipo).filter(filtrarPagina).filter(filtrarIdioma);
     
-    if(proyectos.length) {
+    if(proyectos) {
         mostrarProyectos(proyectos);
-        return;
     }
 }
 
