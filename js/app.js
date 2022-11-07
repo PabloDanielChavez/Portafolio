@@ -116,10 +116,11 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             spinner.classList.add('non');
             resetFormulario();
+            sincronizarStorage();
             alertaMensaje.classList.remove('non');
             setTimeout(() => {
                 alertaMensaje.classList.add('non');
-                sincronizarStorage();
+                
             }, 3000);
         }, 3000);
     }
