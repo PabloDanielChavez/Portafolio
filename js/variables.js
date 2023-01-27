@@ -10,6 +10,8 @@ const spinner = document.querySelector('#spinner');
 
 const alertaMensaje = document.querySelector('#alerta-mensaje');
 
+
+
 // ************
 const tipo = document.querySelector('#tipo');
 const pagina = document.querySelector('#pagina');

@@ -242,6 +242,65 @@ function crearNuevoMensaje(cliente) {
     transaction.oncomplete = () => {
         console.log('Mensaje Agregado');
     };
-
-    
 }
+
+// // Secciones
+// const headerDiv = document.querySelector('.header');
+
+// function cargarHeader() {
+//     const headerGrid = document.createElement('DIV');
+//     headerGrid.classList.add('header__grid');
+    
+//     const headerLogo = document.createElement('DIV');
+//     headerLogo.classList.add('header__logo');
+
+//     const headerTituloPri = document.createElement('H1');
+//     headerTituloPri.classList.add('header__titulo-pri');
+//     headerTituloPri.textContent = 'Portafolio';
+
+//     const headerSpanTit = document.createElement('SPAN');
+//     headerSpanTit.classList.add('header__span-tit');
+//     headerSpanTit.textContent = 'PC';
+
+//     const headerSpanMin = document.createElement('SPAN');
+//     headerSpanMin.classList.add('header__span-min');
+//     headerSpanMin.textContent = 'Pablo Daniel Chavez';
+
+
+//     const headerNavegacion = document.createElement('DIV');
+//     headerNavegacion.classList.add('header__navegacion');
+
+//     const headerNav = document.createElement('NAV');
+//     headerNav.classList.add('header__nav');
+
+//     const headerLinkInicio = document.createElement('A');
+//     headerLinkInicio.setAttribute('href', 'index.html');
+//     headerLinkInicio.classList.add('header__link');
+//     headerLinkInicio.textContent = 'Inicio';
+
+//     const headerLinkServicios = document.createElement('A');
+//     headerLinkServicios.setAttribute('href', 'servicios.html');
+//     headerLinkServicios.classList.add('header__link');
+//     headerLinkServicios.textContent = 'Servicios';
+
+//     const headerLinkContactame = document.createElement('A');
+//     headerLinkContactame.setAttribute('href', '#');
+//     headerLinkContactame.classList.add('header__link');
+//     headerLinkContactame.textContent = 'Contáctame';
+
+//     // Titulo
+//     headerTituloPri.appendChild(headerSpanTit);
+//     headerTituloPri.appendChild(headerSpanMin);
+//     headerLogo.appendChild(headerTituloPri);
+//     headerGrid.appendChild(headerLogo);
+
+//     // Navegador
+//     headerNav.appendChild(headerLinkInicio);
+//     headerNav.appendChild(headerLinkServicios);
+//     headerNav.appendChild(headerLinkContactame);
+//     headerNavegacion.appendChild(headerNav);
+//     headerGrid.appendChild(headerNavegacion);
+
+//     // General
+//     headerDiv.appendChild(headerGrid);
+// }
