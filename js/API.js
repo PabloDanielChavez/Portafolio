@@ -1,0 +1,1 @@
+import { mostrarPlanError } from "./funciones.js"; const url = "http://localhost:4000/planes"; export const obtenerPlan = async () => { try { const resultado = await fetch(url); const clientes = await resultado.json(); return clientes; } catch (error) { console.log(error); mostrarPlanError(); } }
