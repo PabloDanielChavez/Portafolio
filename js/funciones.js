@@ -1,8 +1,88 @@
+
+const bienvenida__navegacion = document.querySelector('.bienvenida__navegacion');
+const sobremi__datosBox = document.querySelector('.sobremi__datos-box');
 const sobremi__interesGrid = document.querySelector('.sobremi__interes-grid');
 const habilidades__tecnicas = document.querySelector('.habilidades__tecnicas');
 const habilidades__profesionales = document.querySelector('.habilidades__profesionales');
 const servicios__planes = document.querySelector('.servicios__planes');
 const informacionPortafolio__grid = document.querySelector('.informacion-portafolio__grid');
+
+export function mostrarBienvenidaNavegacion(href, nombreImagen, alt) {
+
+    const bienvenida__linkBienvenida = document.createElement('A');
+    bienvenida__linkBienvenida.classList.add('bienvenida__link-bienvenida');
+    bienvenida__linkBienvenida.setAttribute('href', `${href}`);
+    bienvenida__navegacion.appendChild(bienvenida__linkBienvenida);
+
+    const picture = document.createElement('PICTURE');
+    bienvenida__linkBienvenida.appendChild(picture);
+
+    const sourceAvif = document.createElement('SOURCE');
+    sourceAvif.setAttribute("srcset", `build/img/iconos/${nombreImagen}.avif`);
+    sourceAvif.setAttribute("type", "image/avif");
+    picture.appendChild(sourceAvif);
+
+    const sourceWebp = document.createElement('SOURCE');
+    sourceWebp.setAttribute("srcset", `build/img/iconos/${nombreImagen}.webp`);
+    sourceWebp.setAttribute("type", "image/webp");
+    picture.appendChild(sourceWebp);
+
+    const sourceJpg = document.createElement('SOURCE');
+    sourceJpg.setAttribute("srcset", `build/img/iconos/${nombreImagen}.jpg`);
+    sourceJpg.setAttribute("type", "image/jpg"); 
+    picture.appendChild(sourceJpg);
+
+    const bienvenida__redsocialImg = document.createElement('IMG');
+    bienvenida__redsocialImg.classList.add('bienvenida__redsocial-img');
+    bienvenida__redsocialImg.setAttribute("loading", "lazy");
+    bienvenida__redsocialImg.setAttribute("decoding", "async");
+    bienvenida__redsocialImg.setAttribute("src", `build/img/iconos/${nombreImagen}.jpg`);
+    bienvenida__redsocialImg.setAttribute("lazyalt", "imagen");
+    bienvenida__redsocialImg.setAttribute("alt", `${alt}`);
+    bienvenida__redsocialImg.setAttribute("width", "auto");
+    bienvenida__redsocialImg.setAttribute("height", "auto");
+    picture.appendChild(bienvenida__redsocialImg);    
+}
+
+export function mostrarBienvenidaNavegacionError() {
+    bienvenida__navegacion.innerHTML = `
+        <a class="bienvenida__link-bienvenida" href="https://www.instagram.com/pablo.chavez20/"><picture><source srcset="build/img/iconos/icono-instagram-white.avif" type="image/avif"><source srcset="build/img/iconos/icono-instagram-white.webp" type="image/webp"><source srcset="build/img/iconos/icono-instagram-white.jpg" type="image/jpg"><img class="bienvenida__redsocial-img" loading="lazy" decoding="async" src="build/img/iconos/icono-instagram-white.jpg" lazyalt="imagen" alt="icono instagram white" width="auto" height="auto"></picture></a>
+        <a class="bienvenida__link-bienvenida" href="https://wa.me/5491166621017"><picture><source srcset="build/img/iconos/icono-whatsapp-white.avif" type="image/avif"><source srcset="build/img/iconos/icono-whatsapp-white.webp" type="image/webp"><source srcset="build/img/iconos/icono-whatsapp-white.jpg" type="image/jpg"><img class="bienvenida__redsocial-img" loading="lazy" decoding="async" src="build/img/iconos/icono-whatsapp-white.jpg" lazyalt="imagen" alt="icono whatsapp white" width="auto" height="auto"></picture></a>
+        <a class="bienvenida__link-bienvenida" href="https://www.youtube.com/channel/UCDKL4JLgdmVmmBAJPRGx0Eg/featured"><picture><source srcset="build/img/iconos/icono-youtube-white.avif" type="image/avif"><source srcset="build/img/iconos/icono-youtube-white.webp" type="image/webp"><source srcset="build/img/iconos/icono-youtube-white.jpg" type="image/jpg"><img class="bienvenida__redsocial-img" loading="lazy" decoding="async" src="build/img/iconos/icono-youtube-white.jpg" lazyalt="imagen" alt="icono youtube white" width="auto" height="auto"></picture></a>
+    `;
+    console.log('Hubo un error al conectarse a la base de datos "BienvenidaNavegacion", se imprimio codigo de respaldo');
+}
+
+export function mostrarDatosPersonales(nombre, dato, href) {
+    
+    const sobremi__dato = document.createElement('DIV');
+    sobremi__dato.classList.add('sobremi__dato');
+    sobremi__datosBox.appendChild(sobremi__dato);
+
+    const sobremi__opcionDato = document.createElement('P');
+    sobremi__opcionDato.classList.add('sobremi__opcion-dato');
+    sobremi__opcionDato.textContent = nombre;
+    sobremi__dato.appendChild(sobremi__opcionDato);
+
+    const sobremi__detalle = document.createElement('A');
+    sobremi__detalle.classList.add('sobremi__detalle');
+    sobremi__detalle.setAttribute("href", dato);
+    sobremi__detalle.textContent = href;
+    sobremi__dato.appendChild(sobremi__detalle);
+
+}
+
+export function mostrarDatosPersonalesError() {
+    sobremi__datosBox.innerHTML = `
+        <div class="sobremi__dato"><p class="sobremi__opcion-dato">Fecha de nacimiento</p><a class="sobremi__detalle" href="#">05/12/1999</a></div>
+        <div class="sobremi__dato"><p class="sobremi__opcion-dato">Telefono</p><a class="sobremi__detalle" href="tel:+54-911-6662-1017">+54-911-6662-1017</a></div>
+        <div class="sobremi__dato"><p class="sobremi__opcion-dato">Correo</p><a class="sobremi__detalle" href="#">pablo_daniel_chavez@outlook.es</a></div>
+        <div class="sobremi__dato"><p class="sobremi__opcion-dato">Sitio web</p><a class="sobremi__detalle" href="https://portafolio-pdc.netlify.app/">www.portafolio-pdc.netlify.app</a></div>
+        <div class="sobremi__dato"><p class="sobremi__opcion-dato">Vivo en</p><a class="sobremi__detalle" href="https://goo.gl/maps/XxEwcjQFFGf6Gzme7">Buenos Aires - Argentina</a></div>
+        <div class="sobremi__dato"><p class="sobremi__opcion-dato">Estado del trabajo</p><a class="sobremi__detalle" href="#">Freelance</a></div>
+    `;
+    console.log('Hubo un error al conectarse a la base de datos "DatosPersonales", se imprimio codigo de respaldo');
+}
 
 export function mostrarInteres(icono, nombre) {
 
@@ -24,42 +104,15 @@ export function mostrarInteres(icono, nombre) {
 
 export function mostrarInteresError() {
     sobremi__interesGrid.innerHTML = `
-    <div class="sobremi__interes-box">
-        <span class="material-symbols-outlined sobremi__interes-icons">stadia_controller</span>
-        <span class="sobremi__interes-icons-nombre">Juegos</span>
-    </div>
-    <div class="sobremi__interes-box">
-        <span class="material-symbols-outlined sobremi__interes-icons">headphones</span>
-        <span class="sobremi__interes-icons-nombre">Musica</span>
-    </div>
-    <div class="sobremi__interes-box">
-        <span class="material-symbols-outlined sobremi__interes-icons">movie</span>
-        <span class="sobremi__interes-icons-nombre">Peliculas</span>
-    </div>
-    <div class="sobremi__interes-box">
-        <span class="material-symbols-outlined sobremi__interes-icons">smartphone</span>
-        <span class="sobremi__interes-icons-nombre">Celulares</span>
-    </div>
-    <div class="sobremi__interes-box">
-        <span class="material-symbols-outlined sobremi__interes-icons">menu_book</span>
-        <span class="sobremi__interes-icons-nombre">Leer</span>
-    </div>
-    <div class="sobremi__interes-box">
-        <span class="material-symbols-outlined sobremi__interes-icons">coffee</span>
-        <span class="sobremi__interes-icons-nombre">Café</span>
-    </div>
-    <div class="sobremi__interes-box">
-        <span class="material-symbols-outlined sobremi__interes-icons">travel_explore</span>
-        <span class="sobremi__interes-icons-nombre">Viajar</span>
-    </div>
-    <div class="sobremi__interes-box">
-        <span class="material-symbols-outlined sobremi__interes-icons">house</span>
-        <span class="sobremi__interes-icons-nombre">Hogar</span>
-    </div>
-    <div class="sobremi__interes-box">
-        <span class="material-symbols-outlined sobremi__interes-icons">groups</span>
-        <span class="sobremi__interes-icons-nombre">Amigos</span>
-    </div>
+        <div class="sobremi__interes-box"><span class="material-symbols-outlined sobremi__interes-icons">stadia_controller</span><span class="sobremi__interes-icons-nombre">Juegos</span></div>
+        <div class="sobremi__interes-box"><span class="material-symbols-outlined sobremi__interes-icons">headphones</span><span class="sobremi__interes-icons-nombre">Musica</span></div>
+        <div class="sobremi__interes-box"><span class="material-symbols-outlined sobremi__interes-icons">movie</span><span class="sobremi__interes-icons-nombre">Peliculas</span></div>
+        <div class="sobremi__interes-box"><span class="material-symbols-outlined sobremi__interes-icons">smartphone</span><span class="sobremi__interes-icons-nombre">Celulares</span></div>
+        <div class="sobremi__interes-box"><span class="material-symbols-outlined sobremi__interes-icons">menu_book</span><span class="sobremi__interes-icons-nombre">Leer</span></div>
+        <div class="sobremi__interes-box"><span class="material-symbols-outlined sobremi__interes-icons">coffee</span><span class="sobremi__interes-icons-nombre">Café</span></div>
+        <div class="sobremi__interes-box"><span class="material-symbols-outlined sobremi__interes-icons">travel_explore</span><span class="sobremi__interes-icons-nombre">Viajar</span></div>
+        <div class="sobremi__interes-box"><span class="material-symbols-outlined sobremi__interes-icons">house</span><span class="sobremi__interes-icons-nombre">Hogar</span></div>
+        <div class="sobremi__interes-box"><span class="material-symbols-outlined sobremi__interes-icons">groups</span><span class="sobremi__interes-icons-nombre">Amigos</span></div>
     `;
     console.log('Hubo un error al conectarse a la base de datos "Interes", se imprimio codigo de respaldo');
 }
@@ -91,34 +144,10 @@ export function mostrarTecnicas(nombre, porcentaje) {
 
 export function mostrarTecnicaError() {
     habilidades__tecnicas.innerHTML = `
-        <div class="habilidades__tecnicas-panel">
-            <p class="habilidades__nombre">HTML</p>
-            <div class="barra">
-                <p class="barra__porcentaje">10%</p>
-                <span class="barra__bar barra__bar--10"></span>
-            </div>
-        </div>
-        <div class="habilidades__tecnicas-panel">
-            <p class="habilidades__nombre">CSS</p>
-            <div class="barra">
-                <p class="barra__porcentaje">10%</p>
-                <span class="barra__bar barra__bar--10"></span>
-            </div>
-        </div>
-        <div class="habilidades__tecnicas-panel">
-            <p class="habilidades__nombre">JavaScript</p>
-            <div class="barra">
-                <p class="barra__porcentaje">5%</p>
-                <span class="barra__bar barra__bar--5"></span>
-            </div>
-        </div>
-        <div class="habilidades__tecnicas-panel">
-            <p class="habilidades__nombre">PHP</p>
-            <div class="barra">
-                <p class="barra__porcentaje">0%</p>
-                <span class="barra__bar barra__bar--0"></span>
-            </div>
-        </div>
+        <div class="habilidades__tecnicas"><p class="habilidades__nombre">HTML</p><div class="barra"><p class="barra__porcentaje">10%</p><span class="barra__bar barra__bar--10"></span></div></div>
+        <div class="habilidades__tecnicas"><p class="habilidades__nombre">CSS</p><div class="barra"><p class="barra__porcentaje">10%</p><span class="barra__bar barra__bar--10"></span></div></div>
+        <div class="habilidades__tecnicas"><p class="habilidades__nombre">JavaScript</p><div class="barra"><p class="barra__porcentaje">5%</p><span class="barra__bar barra__bar--5"></span></div></div>
+        <div class="habilidades__tecnicas"><p class="habilidades__nombre">PHP</p><div class="barra"><p class="barra__porcentaje">0%</p><span class="barra__bar barra__bar--0"></span></div></div>
     `;
     console.log('Hubo un error al conectarse a la base de datos "Tecnica", se imprimio codigo de respaldo');
 }
@@ -150,34 +179,10 @@ export function mostrarProfesionales(nombre, porcentaje) {
 
 export function mostrarProfesionalesError() {
     habilidades__profesionales.innerHTML = `
-        <div class="habilidades__profesionales-panel">
-            <p class="habilidades__nombre">Comunicación</p>
-            <div class="barra">
-                <p class="barra__porcentaje">0%</p>
-                <span class="barra__bar barra__bar--0"></span>
-            </div>
-        </div>
-        <div class="habilidades__profesionales-panel">
-            <p class="habilidades__nombre">Trabajo en equipo</p>
-            <div class="barra">
-                <p class="barra__porcentaje">0%</p>
-                <span class="barra__bar barra__bar--0"></span>
-            </div>
-        </div>
-        <div class="habilidades__profesionales-panel">
-            <p class="habilidades__nombre">Creatividad</p>
-            <div class="barra">
-                <p class="barra__porcentaje">5%</p>
-                <span class="barra__bar barra__bar--5"></span>
-            </div>
-        </div>
-        <div class="habilidades__profesionales-panel">
-            <p class="habilidades__nombre">Dedicación</p>
-            <div class="barra">
-                <p class="barra__porcentaje">5%</p>
-                <span class="barra__bar barra__bar--5"></span>
-            </div>
-        </div>
+        <div class="habilidades__profesionales"><p class="habilidades__nombre">Comunicación</p><div class="barra"><p class="barra__porcentaje">0%</p><span class="barra__bar barra__bar--0"></span></div></div>
+        <div class="habilidades__profesionales"><p class="habilidades__nombre">Trabajo en equipo</p><div class="barra"><p class="barra__porcentaje">0%</p><span class="barra__bar barra__bar--0"></span></div></div>
+        <div class="habilidades__profesionales"><p class="habilidades__nombre">Creatividad</p><div class="barra"><p class="barra__porcentaje">5%</p><span class="barra__bar barra__bar--5"></span></div></div>
+        <div class="habilidades__profesionales"><p class="habilidades__nombre">Dedicación</p><div class="barra"><p class="barra__porcentaje">10%</p><span class="barra__bar barra__bar--10"></span></div></div>
     `;
     console.log('Hubo un error al conectarse a la base de datos "Profesionales", se imprimio codigo de respaldo');
 }
@@ -248,57 +253,9 @@ export function mostrarPlan(nombre, info, paginas, revisiones, precio, descuento
 
 export function mostrarPlanError() {
     servicios__planes.innerHTML = `
-        <div class="servicios__planes-box">
-            <h3 class="servicios__h3-servicios">Basico</h3>
-            <p class="servicios__detalles">Este es el mejor plan si quieres hacer una web con solo una pagina.</p>
-            <div class="servicios__contenido">
-                <span class="servicios__opcion">Paginas</span>
-                <span class="servicios__cantidad">1</span>
-            </div>
-            <div class="servicios__contenido">
-                <span class="servicios__opcion">Revisiones</span>
-                <span class="servicios__cantidad">2</span>
-            </div>
-            <span class="servicios__divisor"></span>
-            <div class="servicios__pre">
-                <p class="servicios__precio"><span class="servicios__dolar">$</span>45</p>
-                <span class="servicios__descuento">0% de descuento</span>
-            </div>
-        </div>
-        <div class="servicios__planes-box">
-            <h3 class="servicios__h3-servicios">Estándar</h3>
-            <p class="servicios__detalles">Con este plan podras tener una web con hasta 3 paginas</p>
-            <div class="servicios__contenido">
-                <span class="servicios__opcion">Paginas</span>
-                <span class="servicios__cantidad">3</span>
-            </div>
-            <div class="servicios__contenido">
-                <span class="servicios__opcion">Revisiones</span>
-                <span class="servicios__cantidad">3</span>
-            </div>
-            <span class="servicios__divisor"></span>
-            <div class="servicios__pre">
-                <p class="servicios__precio"><span class="servicios__dolar">$</span>108</p>
-                <span class="servicios__descuento">20% de descuento</span>
-            </div>
-        </div>
-        <div class="servicios__planes-box">
-            <h3 class="servicios__h3-servicios">Premium</h3>
-            <p class="servicios__detalles">Este plan te permite tener hasta una web con hasta 5 paginas</p>
-            <div class="servicios__contenido">
-                <span class="servicios__opcion">Paginas</span>
-                <span class="servicios__cantidad">5</span>
-            </div>
-            <div class="servicios__contenido">
-                <span class="servicios__opcion">Revisiones</span>
-                <span class="servicios__cantidad">5</span>
-            </div>
-            <span class="servicios__divisor"></span>
-            <div class="servicios__pre">
-                <p class="servicios__precio"><span class="servicios__dolar">$</span>170</p>
-                <span class="servicios__descuento">25% de descuento</span>
-            </div>
-        </div>
+    <div class="servicios__planes-box"><h3 class="servicios__h3-servicios">Basico</h3><p class="servicios__detalles">Con este plan podras tener una web con 1 pagina</p><div class="servicios__contenido"><span class="servicios__opcion">Paginas</span><span class="servicios__cantidad">1</span></div><div class="servicios__contenido"><span class="servicios__opcion">Revisiones</span><span class="servicios__cantidad">2</span></div><span class="servicios__divisor"></span><div class="servicios__pre"><p class="servicios__precio"><span class="servicios__dolar">$</span>450</p><span class="servicios__descuento">0% de descuento</span></div></div>
+    <div class="servicios__planes-box"><h3 class="servicios__h3-servicios">Estandar</h3><p class="servicios__detalles">Con este plan podras tener una web con hasta 3 paginas</p><div class="servicios__contenido"><span class="servicios__opcion">Paginas</span><span class="servicios__cantidad">3</span></div><div class="servicios__contenido"><span class="servicios__opcion">Revisiones</span><span class="servicios__cantidad">3</span></div><span class="servicios__divisor"></span><div class="servicios__pre"><p class="servicios__precio"><span class="servicios__dolar">$</span>1080</p><span class="servicios__descuento">20% de descuento</span></div></div>
+    <div class="servicios__planes-box"><h3 class="servicios__h3-servicios">Premium</h3><p class="servicios__detalles">Este plan te permite tener hasta una web con hasta 5 paginas</p><div class="servicios__contenido"><span class="servicios__opcion">Paginas</span><span class="servicios__cantidad">5</span></div><div class="servicios__contenido"><span class="servicios__opcion">Revisiones</span><span class="servicios__cantidad">5</span></div><span class="servicios__divisor"></span><div class="servicios__pre"><p class="servicios__precio"><span class="servicios__dolar">$</span>1700</p><span class="servicios__descuento">25% de descuento</span></div></div>
     `;
     console.log('Hubo un error al conectarse a la base de datos "Plan", se imprimio codigo de respaldo');
 }
@@ -440,4 +397,5 @@ export function mostrarInformacionError() {
         <li class="informacion-portafolio__box"><div class="informacion-portafolio__hf"><p class="informacion-portafolio__version-parrafo">0.0.2-Betha</p><p class="informacion-portafolio__fecha">8/2/2023</p><p class="informacion-portafolio__fecha">9/2/2023</p></div><div class="informacion-portafolio__texto"><p class="material-symbols-outlined informacion-portafolio__icono--done">check_circle</p><p class="informacion-portafolio__parrafo">El diseño de las barras de habildiades ya tiene el estilo deseado.</p></div><div class="informacion-portafolio__texto"><p class="material-symbols-outlined informacion-portafolio__icono--done">check_circle</p><p class="informacion-portafolio__parrafo">Nuevo diseño para la pagina 'Informacion' la cual, hasta ahora solo muestra las versiones del portafolio.</p></div><div class="informacion-portafolio__texto"><p class="material-symbols-outlined informacion-portafolio__icono--error">error</p><p class="informacion-portafolio__parrafo">Hay problemas con las fuentes (Roboto Condensed e iconos), Al querer comprobar el 'SEO', las fuentes bloquean los styles hasta terminear de cargar los mismos, y perjudica la 'Perfomance'.</p></div><div class="informacion-portafolio__texto"><p class="material-symbols-outlined informacion-portafolio__icono--done">check_circle</p><p class="informacion-portafolio__parrafo">Se agrego la ultima seccion llamada 'Footer' al portafolio principal.</p></div><div class="informacion-portafolio__texto"><p class="material-symbols-outlined informacion-portafolio__icono--done">check_circle</p><p class="informacion-portafolio__parrafo">El diseño de la seccion Bienvenido se remplazo por uno con más detalles, y se agrego dos secciones más acompañando a esta, las cuales son sobremi y habilidades.</p></div></li>
         <li class="informacion-portafolio__box"><div class="informacion-portafolio__hf"><p class="informacion-portafolio__version-parrafo">0.0.1-Betha</p><p class="informacion-portafolio__fecha">1/2/2023</p><p class="informacion-portafolio__fecha">8/2/2023</p></div><div class="informacion-portafolio__texto"><p class="material-symbols-outlined informacion-portafolio__icono--done">check_circle</p><p class="informacion-portafolio__parrafo">La distribucion del header se cambio.</p></div><div class="informacion-portafolio__texto"><p class="material-symbols-outlined informacion-portafolio__icono--done">check_circle</p><p class="informacion-portafolio__parrafo">El diseño de la seccion 'servicios' se termino.</p></div><div class="informacion-portafolio__texto"><p class="material-symbols-outlined informacion-portafolio__icono--done">check_circle</p><p class="informacion-portafolio__parrafo">Se remplazo la seccion de 'Trabajos' por un nuevo diseño.</p></div><div class="informacion-portafolio__texto"><p class="material-symbols-outlined informacion-portafolio__icono--done">check_circle</p><p class="informacion-portafolio__parrafo">El diseño de las secciones header, bienvenido y trabajos fueron terminados.</p></div><div class="informacion-portafolio__texto"><p class="material-symbols-outlined informacion-portafolio__icono--done">check_circle</p><p class="informacion-portafolio__parrafo">Se comenzo a trabajar con un nuevo diseño del portafolio.</p></div></li>
     `;
+    console.log('Hubo un error al conectarse a la base de datos "Informacion", se imprimio codigo de respaldo');
 }
