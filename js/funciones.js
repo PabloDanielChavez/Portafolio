@@ -1,11 +1,16 @@
 
+
 const bienvenida__navegacion = document.querySelector('.bienvenida__navegacion');
 const sobremi__datosBox = document.querySelector('.sobremi__datos-box');
 const sobremi__interesGrid = document.querySelector('.sobremi__interes-grid');
 const habilidades__tecnicas = document.querySelector('.habilidades__tecnicas');
 const habilidades__profesionales = document.querySelector('.habilidades__profesionales');
+const destacados__grid = document.querySelector('.destacados__grid');
 const servicios__planes = document.querySelector('.servicios__planes');
+const footer__redes = document.querySelector('.footer__redes');
 const informacionPortafolio__grid = document.querySelector('.informacion-portafolio__grid');
+
+const referenciaFooter = document.querySelector('#referenciaFooter');
 
 export function mostrarBienvenidaNavegacion(href, nombreImagen, alt) {
 
@@ -187,6 +192,61 @@ export function mostrarProfesionalesError() {
     console.log('Hubo un error al conectarse a la base de datos "Profesionales", se imprimio codigo de respaldo');
 }
 
+export function mostrarDestacados(href, nombreImagen, alt, nombrePagina, infoPagina, id) {
+    
+    const destacados__box = document.createElement('A');
+    destacados__box.classList.add('destacados__box');
+    destacados__box.setAttribute('href', `${href}`);
+    destacados__grid.appendChild(destacados__box);
+
+    const picture = document.createElement('PICTURE');
+    destacados__box.appendChild(picture);
+
+    const sourceAvif = document.createElement('SOURCE');
+    sourceAvif.setAttribute("srcset", `build/img/${nombreImagen}.avif`);
+    sourceAvif.setAttribute("type", "image/avif");
+    picture.appendChild(sourceAvif);
+
+    const sourceWebp = document.createElement('SOURCE');
+    sourceWebp.setAttribute("srcset", `build/img/${nombreImagen}.webp`);
+    sourceWebp.setAttribute("type", "image/webp");
+    picture.appendChild(sourceWebp);
+
+    const sourceJpg = document.createElement('SOURCE');
+    sourceJpg.setAttribute("srcset", `build/img/${nombreImagen}.jpg`);
+    sourceJpg.setAttribute("type", "image/jpg"); 
+    picture.appendChild(sourceJpg);
+
+    const destacados__imagen = document.createElement('IMG');
+    destacados__imagen.classList.add('destacados__imagen');
+    destacados__imagen.setAttribute("loading", "lazy");
+    destacados__imagen.setAttribute("decoding", "async");
+    destacados__imagen.setAttribute("src", `build/img/${nombreImagen}.jpg`);
+    destacados__imagen.setAttribute("lazyalt", "imagen");
+    destacados__imagen.setAttribute("alt", `${alt}`);
+    destacados__imagen.setAttribute("width", "auto");
+    destacados__imagen.setAttribute("height", "auto");
+    picture.appendChild(destacados__imagen);
+
+    const destacados__h3 = document.createElement('H3');
+    destacados__h3.classList.add('destacados__h3');
+    destacados__h3.textContent = nombrePagina;
+    destacados__box.appendChild(destacados__h3);
+
+    const destacadosPaginaTexto = document.createElement('P');
+    destacadosPaginaTexto.classList.add('destacados__texto');
+    destacadosPaginaTexto.textContent = infoPagina;
+    destacados__box.appendChild(destacadosPaginaTexto);
+}
+
+export function mostrarDestacadosError() {
+    destacados__grid.innerHTML = `
+        <a class="destacados__box" href="#"><picture><source srcset="build/img/fondo-gales.avif" type="image/avif"><source srcset="build/img/fondo-gales.webp" type="image/webp"><source srcset="build/img/fondo-gales.jpg" type="image/jpg"><img class="destacados__imagen" loading="lazy" decoding="async" src="build/img/fondo-gales.jpg" lazyalt="imagen" alt="Fondo gales" width="auto" height="auto"></picture><h3 class="destacados__h3">Pagina Ejemplo</h3><p class="destacados__texto">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio commodi accusamus tempora rem dignissimos ut iste qui illum! Itaque maxime tempore tempora suscipit veniam voluptas, sed assumenda quae corrupti aliquid.</p></a>
+        <a class="destacados__box" href="#"><picture><source srcset="build/img/fondo-gales.avif" type="image/avif"><source srcset="build/img/fondo-gales.webp" type="image/webp"><source srcset="build/img/fondo-gales.jpg" type="image/jpg"><img class="destacados__imagen" loading="lazy" decoding="async" src="build/img/fondo-gales.jpg" lazyalt="imagen" alt="Fondo gales" width="auto" height="auto"></picture><h3 class="destacados__h3">Pagina Ejemplo</h3><p class="destacados__texto">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio commodi accusamus tempora rem dignissimos ut iste qui illum! Itaque maxime tempore tempora suscipit veniam voluptas, sed assumenda quae corrupti aliquid.</p></a>
+    `;
+    console.log('Hubo un error al conectarse a la base de datos "Destacados", se imprimio codigo de respaldo');
+}
+
 export function mostrarPlan(nombre, info, paginas, revisiones, precio, descuento) {
 
     const servicios__planesBox = document.createElement('DIV');
@@ -258,6 +318,51 @@ export function mostrarPlanError() {
     <div class="servicios__planes-box"><h3 class="servicios__h3-servicios">Premium</h3><p class="servicios__detalles">Este plan te permite tener hasta una web con hasta 5 paginas</p><div class="servicios__contenido"><span class="servicios__opcion">Paginas</span><span class="servicios__cantidad">5</span></div><div class="servicios__contenido"><span class="servicios__opcion">Revisiones</span><span class="servicios__cantidad">5</span></div><span class="servicios__divisor"></span><div class="servicios__pre"><p class="servicios__precio"><span class="servicios__dolar">$</span>1700</p><span class="servicios__descuento">25% de descuento</span></div></div>
     `;
     console.log('Hubo un error al conectarse a la base de datos "Plan", se imprimio codigo de respaldo');
+}
+
+export function mostrarFooter(href, nombreImagen, alt) {
+
+    const footer__redsocialBox = document.createElement('A');
+    footer__redsocialBox.classList.add('footer__redsocialBox');
+    footer__redsocialBox.setAttribute('href', `${href}`);
+    footer__redes.insertBefore(footer__redsocialBox, referenciaFooter);
+
+    const picture = document.createElement('PICTURE');
+    footer__redsocialBox.appendChild(picture);
+
+    const sourceAvif = document.createElement('SOURCE');
+    sourceAvif.setAttribute("srcset", `build/img/iconos/${nombreImagen}.avif`);
+    sourceAvif.setAttribute("type", "image/avif");
+    picture.appendChild(sourceAvif);
+
+    const sourceWebp = document.createElement('SOURCE');
+    sourceWebp.setAttribute("srcset", `build/img/iconos/${nombreImagen}.webp`);
+    sourceWebp.setAttribute("type", "image/webp");
+    picture.appendChild(sourceWebp);
+
+    const sourceJpg = document.createElement('SOURCE');
+    sourceJpg.setAttribute("srcset", `build/img/iconos/${nombreImagen}.jpg`);
+    sourceJpg.setAttribute("type", "image/jpg"); 
+    picture.appendChild(sourceJpg);
+
+    const footer__redsocialImg = document.createElement('IMG');
+    footer__redsocialImg.classList.add('footer__redsocial-img');
+    footer__redsocialImg.setAttribute("loading", "lazy");
+    footer__redsocialImg.setAttribute("decoding", "async");
+    footer__redsocialImg.setAttribute("src", `build/img/iconos/${nombreImagen}.jpg`);
+    footer__redsocialImg.setAttribute("lazyalt", "imagen");
+    footer__redsocialImg.setAttribute("alt", `${alt}`);
+    footer__redsocialImg.setAttribute("width", "auto");
+    footer__redsocialImg.setAttribute("height", "auto");
+    picture.appendChild(footer__redsocialImg);    
+}
+
+export function mostrarFooterError() {
+    footer__redes.innerHTML = `
+    <span class="footer__linea-horizontal"></span>
+    <a class="footer__redsocialBox" href="https://www.instagram.com/pablo.chavez20/"><picture><source srcset="build/img/iconos/icono-instagram-white.avif" type="image/avif"><source srcset="build/img/iconos/icono-instagram-white.webp" type="image/webp"><source srcset="build/img/iconos/icono-instagram-white.jpg" type="image/jpg"><img class="footer__redsocial-img" loading="lazy" decoding="async" src="build/img/iconos/icono-instagram-white.jpg" lazyalt="imagen" alt="icono instagram white" width="auto" height="auto"></picture></a><a class="footer__redsocialBox" href="https://wa.me/5491166621017"><picture><source srcset="build/img/iconos/icono-whatsapp-white.avif" type="image/avif"><source srcset="build/img/iconos/icono-whatsapp-white.webp" type="image/webp"><source srcset="build/img/iconos/icono-whatsapp-white.jpg" type="image/jpg"><img class="footer__redsocial-img" loading="lazy" decoding="async" src="build/img/iconos/icono-whatsapp-white.jpg" lazyalt="imagen" alt="icono whatsapp white" width="auto" height="auto"></picture></a><a class="footer__redsocialBox" href="https://www.youtube.com/channel/UCDKL4JLgdmVmmBAJPRGx0Eg/featured"><picture><source srcset="build/img/iconos/icono-youtube-white.avif" type="image/avif"><source srcset="build/img/iconos/icono-youtube-white.webp" type="image/webp"><source srcset="build/img/iconos/icono-youtube-white.jpg" type="image/jpg"><img class="footer__redsocial-img" loading="lazy" decoding="async" src="build/img/iconos/icono-youtube-white.jpg" lazyalt="imagen" alt="icono youtube white" width="auto" height="auto"></picture></a>
+    <span id="referenciaFooter" class="footer__linea-horizontal"></span>
+    `
 }
 
 export function mostrarInformacion( version, fechaInicio, fechaFin, tipo1, detalle1, tipo2, detalle2, tipo3, detalle3, tipo4, detalle4, tipo5, detalle5 ) {
@@ -393,7 +498,7 @@ export function mostrarInformacion( version, fechaInicio, fechaFin, tipo1, detal
 
 export function mostrarInformacionError() {
     informacionPortafolio__grid.innerHTML = `
-        <li class="informacion-portafolio__box"><div class="informacion-portafolio__hf"><p class="informacion-portafolio__version-parrafo">0.0.3-Betha</p><p class="informacion-portafolio__fecha">10/2/2023</p><p class="informacion-portafolio__fecha">18/3/2023</p></div><div class="informacion-portafolio__texto"><p class="material-symbols-outlined informacion-portafolio__icono--done">check_circle</p><p class="informacion-portafolio__parrafo">Las siguientes secciones consumen datos de una API local: 'Interés', 'Habilidades', 'Planes'. La API que se está utilizando es local, si estás viendo el portafolio desde internet significa que no está consumiendo una API, y esta utilizando código de error. Será así hasta que se pueda crear una base de datos real.</p></div><div class="informacion-portafolio__texto"><p class="material-symbols-outlined informacion-portafolio__icono--done">check_circle</p><p class="informacion-portafolio__parrafo">Las opciones 'telefono', 'Sitio web' y 'Vivo en' de datos personales ahora cuentan con enlaces redireccionales.</p></div><div class="informacion-portafolio__texto"><p class="material-symbols-outlined informacion-portafolio__icono--done">check_circle</p><p class="informacion-portafolio__parrafo">Modificaciones simples a las secciones 'destacados' y 'Servicios', ya coinciden con el estilo general de el portafolio.</p></div><div class="informacion-portafolio__texto"><p class="material-symbols-outlined informacion-portafolio__icono--done">check_circle</p><p class="informacion-portafolio__parrafo">La seccion Recientes pasara a tener una pagina propia. Este no esta completo, falta implementar circulos progresivos los cuales muestran el SEO.</p></div><div class="informacion-portafolio__texto"><p class="material-symbols-outlined informacion-portafolio__icono--done">check_circle</p><p class="informacion-portafolio__parrafo">Se modifico el diseño de las barras de progreso en la seccion 'Habilidades'.</p></div></li>
+    <li class="informacion-portafolio__box"><div class="informacion-portafolio__hf"><p class="informacion-portafolio__version-parrafo">0.0.3-Betha</p><p class="informacion-portafolio__fecha">10/2/2023</p><p class="informacion-portafolio__fecha">20/3/2023</p></div><div class="informacion-portafolio__texto"><p class="material-symbols-outlined informacion-portafolio__icono--done">check_circle</p><p class="informacion-portafolio__parrafo">Las siguientes secciones consumen datos de una API local: 'Bienvenida Navegacion', 'Datos Personales', 'Interés', 'Habilidades', 'Destacados', 'Planes', 'Footer' y 'Informacion'. La API que se está utilizando es local, si estás viendo el portafolio desde internet significa que no está consumiendo una API, y esta utilizando código de error. Será así hasta que se pueda crear una base de datos real.</p></div><div class="informacion-portafolio__texto"><p class="material-symbols-outlined informacion-portafolio__icono--done">check_circle</p><p class="informacion-portafolio__parrafo">Las opciones 'telefono', 'Sitio web' y 'Vivo en' de datos personales ahora cuentan con enlaces redireccionales.</p></div><div class="informacion-portafolio__texto"><p class="material-symbols-outlined informacion-portafolio__icono--done">check_circle</p><p class="informacion-portafolio__parrafo">Modificaciones simples a las secciones 'destacados' y 'Servicios', ya coinciden con el estilo general de el portafolio.</p></div><div class="informacion-portafolio__texto"><p class="material-symbols-outlined informacion-portafolio__icono--done">check_circle</p><p class="informacion-portafolio__parrafo">La seccion Recientes pasara a tener una pagina propia. Este no esta completo, falta implementar circulos progresivos los cuales muestran el SEO.</p></div><div class="informacion-portafolio__texto"><p class="material-symbols-outlined informacion-portafolio__icono--done">check_circle</p><p class="informacion-portafolio__parrafo">Se modifico el diseño de las barras de progreso en la seccion 'Habilidades'.</p></div></li>
         <li class="informacion-portafolio__box"><div class="informacion-portafolio__hf"><p class="informacion-portafolio__version-parrafo">0.0.2-Betha</p><p class="informacion-portafolio__fecha">8/2/2023</p><p class="informacion-portafolio__fecha">9/2/2023</p></div><div class="informacion-portafolio__texto"><p class="material-symbols-outlined informacion-portafolio__icono--done">check_circle</p><p class="informacion-portafolio__parrafo">El diseño de las barras de habildiades ya tiene el estilo deseado.</p></div><div class="informacion-portafolio__texto"><p class="material-symbols-outlined informacion-portafolio__icono--done">check_circle</p><p class="informacion-portafolio__parrafo">Nuevo diseño para la pagina 'Informacion' la cual, hasta ahora solo muestra las versiones del portafolio.</p></div><div class="informacion-portafolio__texto"><p class="material-symbols-outlined informacion-portafolio__icono--error">error</p><p class="informacion-portafolio__parrafo">Hay problemas con las fuentes (Roboto Condensed e iconos), Al querer comprobar el 'SEO', las fuentes bloquean los styles hasta terminear de cargar los mismos, y perjudica la 'Perfomance'.</p></div><div class="informacion-portafolio__texto"><p class="material-symbols-outlined informacion-portafolio__icono--done">check_circle</p><p class="informacion-portafolio__parrafo">Se agrego la ultima seccion llamada 'Footer' al portafolio principal.</p></div><div class="informacion-portafolio__texto"><p class="material-symbols-outlined informacion-portafolio__icono--done">check_circle</p><p class="informacion-portafolio__parrafo">El diseño de la seccion Bienvenido se remplazo por uno con más detalles, y se agrego dos secciones más acompañando a esta, las cuales son sobremi y habilidades.</p></div></li>
         <li class="informacion-portafolio__box"><div class="informacion-portafolio__hf"><p class="informacion-portafolio__version-parrafo">0.0.1-Betha</p><p class="informacion-portafolio__fecha">1/2/2023</p><p class="informacion-portafolio__fecha">8/2/2023</p></div><div class="informacion-portafolio__texto"><p class="material-symbols-outlined informacion-portafolio__icono--done">check_circle</p><p class="informacion-portafolio__parrafo">La distribucion del header se cambio.</p></div><div class="informacion-portafolio__texto"><p class="material-symbols-outlined informacion-portafolio__icono--done">check_circle</p><p class="informacion-portafolio__parrafo">El diseño de la seccion 'servicios' se termino.</p></div><div class="informacion-portafolio__texto"><p class="material-symbols-outlined informacion-portafolio__icono--done">check_circle</p><p class="informacion-portafolio__parrafo">Se remplazo la seccion de 'Trabajos' por un nuevo diseño.</p></div><div class="informacion-portafolio__texto"><p class="material-symbols-outlined informacion-portafolio__icono--done">check_circle</p><p class="informacion-portafolio__parrafo">El diseño de las secciones header, bienvenido y trabajos fueron terminados.</p></div><div class="informacion-portafolio__texto"><p class="material-symbols-outlined informacion-portafolio__icono--done">check_circle</p><p class="informacion-portafolio__parrafo">Se comenzo a trabajar con un nuevo diseño del portafolio.</p></div></li>
     `;
