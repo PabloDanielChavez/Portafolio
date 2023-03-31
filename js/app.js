@@ -23,7 +23,7 @@ const btnContacto = document.querySelector('#btnContacto');
 
 (function () {
     document.addEventListener("DOMContentLoaded", cargarDatos);
-    if(window.location.href === 'http://127.0.0.1:5500/index.html' || window.location.href === 'https://portafolio-pdc.netlify.app/' || window.location.href === 'https://portafolio-pdc.netlify.app/index.html') {
+    if(window.location.href === 'http://127.0.0.1:5500/index.html' || window.location.href === 'https://portafolio-pdc.netlify.app' || window.location.href === 'https://portafolio-pdc.netlify.app/index.html') {
         btnContacto.addEventListener("click", contacto);
     }
 
