@@ -42,7 +42,7 @@ const btnContacto = document.querySelector('#btnContacto');
         //         }, 500);
         //     }, 500);
         // }
-        if(window.location.href === 'http://127.0.0.1:5500/informacion.html' || window.location.href === 'https://portafolio-pdc.netlify.app/informacion.html') {
+        if(window.location.href === 'http://127.0.0.1:5500/informacion.html' || window.location.href === 'https://portafolio-pdc.netlify.app/informacion.html' || window.location.href === 'https://portafolio-pdc.netlify.app/informacion') {
             cargarInformacion();
         }
     };
