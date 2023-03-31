@@ -1,11 +1,31 @@
-import { obtenerBienvenidaNavegacion, obtenerInteres, obtenerDatosPersonales, obtenerTecnicas, obtenerProfesionales, obtenerDestacados, obtenerPlan, obtenerFooter, obtenerInformacion} from './API.js';
-import { mostrarBienvenidaNavegacion, mostrarInteres, mostrarDatosPersonales, mostrarTecnicas, mostrarProfesionales, mostrarDestacados, mostrarPlan, mostrarFooter,mostrarInformacion, activarFormulario} from './funciones.js';
+import {
+            obtenerBienvenidaNavegacion,
+            obtenerInteres,
+            obtenerDatosPersonales,
+            obtenerTecnicas,
+            obtenerProfesionales,
+            obtenerDestacados, obtenerPlan,
+            obtenerFooter,
+            obtenerInformacion
+        } from './API.js';
+import { 
+            mostrarBienvenidaNavegacion,
+            mostrarInteres,
+            mostrarDatosPersonales,
+            mostrarTecnicas,
+            mostrarProfesionales,
+            mostrarDestacados, mostrarPlan,
+            mostrarFooter,
+            mostrarInformacion, activarFormulario
+    } from './funciones.js';
 
 const btnContacto = document.querySelector('#btnContacto');
 
 (function () {
     document.addEventListener("DOMContentLoaded", cargarDatos);
-    btnContacto.addEventListener("click", contacto);
+    if(window.location.href === 'http://127.0.0.1:5500/index.html' || window.location.href === 'https://portafolio-pdc.netlify.app/' || window.location.href === 'https://portafolio-pdc.netlify.app/index.html') {
+        btnContacto.addEventListener("click", contacto);
+    }
 
     function cargarDatos() {
         // if(window.location.href === 'http://127.0.0.1:5500/index.html' || window.location.href === 'https://portafolio-pdc.netlify.app/' || window.location.href === 'https://portafolio-pdc.netlify.app/index.html') {
@@ -22,7 +42,7 @@ const btnContacto = document.querySelector('#btnContacto');
         //         }, 500);
         //     }, 500);
         // }
-        if(window.location.href === 'http://127.0.0.1:5500/Informacion.html' || window.location.href === 'https://portafolio-pdc.netlify.app/informacion.html') {
+        if(window.location.href === 'http://127.0.0.1:5500/informacion.html' || window.location.href === 'https://portafolio-pdc.netlify.app/informacion.html') {
             cargarInformacion();
         }
     };
@@ -30,7 +50,7 @@ const btnContacto = document.querySelector('#btnContacto');
     function contacto() {
         activarFormulario();
         console.log("Desde btnContacto");
-    };
+    }
 
     async function cargarBienvenidaNavegacion() {
         const bienvenidaNavegacion = await obtenerBienvenidaNavegacion();
