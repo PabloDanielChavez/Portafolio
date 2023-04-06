@@ -22,6 +22,8 @@ import {
         } from './variables.js';
 
 export function cargarIndex() {
+    
+    console.log("Estoy");
     if(window.location.href === 'http://127.0.0.1:5500/index.html' || window.location.href === 'https://portafolio-pdc.netlify.app' || window.location.href === 'https://portafolio-pdc.netlify.app/index.html') {
         btnContacto.addEventListener("click", formularioContacto);
         bienvenida__formulario.addEventListener("submit", validarFormulario)
