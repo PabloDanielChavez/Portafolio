@@ -23,17 +23,17 @@ import {
         } from './variables.js';
 
 export function cargarIndex() {
-    if(window.location.href === 'http://127.0.0.1:5500/index.html' || window.location.href === 'https://portafolio-pdc.netlify.app' || window.location.href === 'https://portafolio-pdc.netlify.app/index.html') {
+    if(window.location.href === 'http://127.0.0.1:5500/index.html' || window.location.href === 'https://portafolio-pdc.netlify.app' || window.location.href === 'https://portafolio-pdc.netlify.app/' || window.location.href === 'https://portafolio-pdc.netlify.app/index.html') {
         btnContacto.addEventListener("click", formularioContacto);
         bienvenida__formulario.addEventListener("submit", validarFormulario);
-        console.log("Pagina cargada con exito.");
+        mostrarEmergente("done", "Pagina cargada con exito.");
     }
 }
 
 export function cargarInformacion() {
     if(window.location.href === 'http://127.0.0.1:5500/informacion.html' || window.location.href === 'https://portafolio-pdc.netlify.app/informacion.html' || window.location.href === 'https://portafolio-pdc.netlify.app/informacion') {
         cargarVersiones();
-        console.log("Pagina cargada con exito.");
+        mostrarEmergente("done","Pagina cargada con exito.");
     }
 }
 
