@@ -18,19 +18,20 @@ import {
             btnContacto,
             input__nombre,
             input__correo,
-            input__asunto
+            input__asunto,
+            emergente
         } from './variables.js';
 
 export function cargarIndex() {
-    if(window.location.href === 'http://127.0.0.1:5500/index.html' || window.location.href === 'https://portafolio-pdc.netlify.app/' || window.location.href === 'https://portafolio-pdc.netlify.app/index.html') {
+    if(window.location.href === 'http://127.0.0.1:5500/index.html' || window.location.href === 'https://portafolio-pdc.netlify.app' || window.location.href === 'https://portafolio-pdc.netlify.app/index.html') {
         btnContacto.addEventListener("click", formularioContacto);
-        bienvenida__formulario.addEventListener("submit", validarFormulario)
+        bienvenida__formulario.addEventListener("submit", validarFormulario);
         console.log("Pagina cargada con exito.");
     }
 }
 
 export function cargarInformacion() {
-    if(window.location.href === 'http://127.0.0.1:5500/informacion.html' || window.location.href === 'https://portafolio-pdc.netlify.app/informacion.html' || window.location.href === 'https://portafolio-pdc.netlify.app/informacion/') {
+    if(window.location.href === 'http://127.0.0.1:5500/informacion.html' || window.location.href === 'https://portafolio-pdc.netlify.app/informacion.html' || window.location.href === 'https://portafolio-pdc.netlify.app/informacion') {
         cargarVersiones();
         console.log("Pagina cargada con exito.");
     }
@@ -77,10 +78,10 @@ function mostrarInformacion( version, fechaInicio, fechaFin, tipo1, detalle1, ti
     const informacionPortafolio__iconoDone1 = document.createElement('P');
     if(tipo1 === 'done') {
         informacionPortafolio__iconoDone1.textContent = 'check_circle';
-        informacionPortafolio__iconoDone1.classList.add('material-symbols-outlined', 'informacion-portafolio__icono--done');
+        informacionPortafolio__iconoDone1.classList.add('material-symbols-outlined', 'icono--done');
     } else if( tipo1 === 'error' ) {
         informacionPortafolio__iconoDone1.textContent = 'error';
-        informacionPortafolio__iconoDone1.classList.add('material-symbols-outlined', 'informacion-portafolio__icono--error');
+        informacionPortafolio__iconoDone1.classList.add('material-symbols-outlined', 'icono--error');
     }
     informacionPortafolio__texto1.appendChild(informacionPortafolio__iconoDone1);
 
@@ -96,10 +97,10 @@ function mostrarInformacion( version, fechaInicio, fechaFin, tipo1, detalle1, ti
     const informacionPortafolio__iconoDone2 = document.createElement('P');
     if(tipo2 === 'done') {
         informacionPortafolio__iconoDone2.textContent = 'check_circle';
-        informacionPortafolio__iconoDone2.classList.add('material-symbols-outlined', 'informacion-portafolio__icono--done');
+        informacionPortafolio__iconoDone2.classList.add('material-symbols-outlined', 'icono--done');
     } else if( tipo2 === 'error' ) {
         informacionPortafolio__iconoDone2.textContent = 'error';
-        informacionPortafolio__iconoDone2.classList.add('material-symbols-outlined', 'informacion-portafolio__icono--error');
+        informacionPortafolio__iconoDone2.classList.add('material-symbols-outlined', 'icono--error');
     }
     informacionPortafolio__texto2.appendChild(informacionPortafolio__iconoDone2);
 
@@ -115,10 +116,10 @@ function mostrarInformacion( version, fechaInicio, fechaFin, tipo1, detalle1, ti
     const informacionPortafolio__iconoDone3 = document.createElement('P');
     if(tipo3 === 'done') {
         informacionPortafolio__iconoDone3.textContent = 'check_circle';
-        informacionPortafolio__iconoDone3.classList.add('material-symbols-outlined', 'informacion-portafolio__icono--done');
+        informacionPortafolio__iconoDone3.classList.add('material-symbols-outlined', 'icono--done');
     } else if( tipo3 === 'error' ) {
         informacionPortafolio__iconoDone3.textContent = 'error';
-        informacionPortafolio__iconoDone3.classList.add('material-symbols-outlined', 'informacion-portafolio__icono--error');
+        informacionPortafolio__iconoDone3.classList.add('material-symbols-outlined', 'icono--error');
     }
     informacionPortafolio__texto3.appendChild(informacionPortafolio__iconoDone3);
 
@@ -134,10 +135,10 @@ function mostrarInformacion( version, fechaInicio, fechaFin, tipo1, detalle1, ti
     const informacionPortafolio__iconoDone4 = document.createElement('P');
     if(tipo4 === 'done') {
         informacionPortafolio__iconoDone4.textContent = 'check_circle';
-        informacionPortafolio__iconoDone4.classList.add('material-symbols-outlined', 'informacion-portafolio__icono--done');
+        informacionPortafolio__iconoDone4.classList.add('material-symbols-outlined', 'icono--done');
     } else if( tipo4 === 'error' ) {
         informacionPortafolio__iconoDone4.textContent = 'error';
-        informacionPortafolio__iconoDone4.classList.add('material-symbols-outlined', 'informacion-portafolio__icono--error');
+        informacionPortafolio__iconoDone4.classList.add('material-symbols-outlined', 'icono--error');
     }
     informacionPortafolio__texto4.appendChild(informacionPortafolio__iconoDone4);
 
@@ -153,10 +154,10 @@ function mostrarInformacion( version, fechaInicio, fechaFin, tipo1, detalle1, ti
     const informacionPortafolio__iconoDone5 = document.createElement('P');
     if(tipo5 === 'done') {
         informacionPortafolio__iconoDone5.textContent = 'check_circle';
-        informacionPortafolio__iconoDone5.classList.add('material-symbols-outlined', 'informacion-portafolio__icono--done');
+        informacionPortafolio__iconoDone5.classList.add('material-symbols-outlined', 'icono--done');
     } else if( tipo5 === 'error' ) {
         informacionPortafolio__iconoDone5.textContent = 'error';
-        informacionPortafolio__iconoDone5.classList.add('material-symbols-outlined', 'informacion-portafolio__icono--error');
+        informacionPortafolio__iconoDone5.classList.add('material-symbols-outlined', 'icono--error');
     }
     informacionPortafolio__texto5.appendChild(informacionPortafolio__iconoDone5);
 
@@ -242,9 +243,11 @@ async function validarFormulario(e) {
     }
 
     if( validar(contacto) ) {
+        mostrarEmergente("error", "¡Todos los campos son obligatorios!");
         return;
     }
     await nuevoContacto(contacto);
+    mostrarEmergente("done", "¡Enviado correctamente!");
     setTimeout(() => {
         vaciarFormulario();
         formularioContacto();
@@ -261,6 +264,70 @@ function vaciarFormulario() {
     input__asunto.value = "";
 }
 
-function mostrarAlerta() {
+export function mostrarEmergente(tipo, texto) {
+
+    const vld = document.querySelector('.emergente__grid');
+    if(!vld) {
+        const emergente__grid = document.createElement('DIV');
+        emergente__grid.classList.add('emergente__grid');
+        emergente.appendChild(emergente__grid);
     
+        const emergente__header = document.createElement('HEADER');
+        emergente__header.classList.add('emergente__header');
+        emergente__grid.appendChild(emergente__header);
+    
+        const iconoUno = document.createElement('p');
+        if(tipo === "error") {
+            iconoUno.classList.add("material-symbols-outlined", "icono--error");
+            iconoUno.textContent = "error";
+        } else if(tipo === "done") {
+            iconoUno.classList.add("material-symbols-outlined", "icono--done");
+            iconoUno.textContent = "done";
+        }
+        emergente__header.appendChild(iconoUno);
+    
+        const emergente__h3 = document.createElement('H3');
+        emergente__h3.classList.add('emergente__h3');
+        
+        if(tipo === "error") {
+            emergente__h3.textContent = `error`;
+        } else if(tipo === "done") {
+            emergente__h3.textContent = `Hecho`;
+        }
+        emergente__header.appendChild(emergente__h3);
+    
+        const iconoDos = document.createElement('p');
+        if(tipo === "error") {
+            iconoDos.classList.add("material-symbols-outlined", "icono--error");
+            iconoDos.textContent = "error";
+        } else if(tipo === "done") {
+            iconoDos.classList.add("material-symbols-outlined", "icono--done");
+            iconoDos.textContent = "done";
+        }
+        emergente__header.appendChild(iconoDos);
+    
+        const emergente__info = document.createElement('DIV');
+        emergente__info.classList.add('emergente__info');
+        emergente__grid.appendChild(emergente__info);
+    
+        const emergente__texto = document.createElement('p');
+        emergente__texto.classList.add('emergente__texto');
+        emergente__texto.textContent = `${texto}`;
+        emergente__info.appendChild(emergente__texto);
+    
+        
+        emergente.classList.remove('scale1');
+        emergente.classList.add('scale0');
+        setTimeout(() => {
+            emergente.classList.remove('scale0');
+            emergente.classList.add('scale1');
+            setTimeout(() => {
+                emergente.classList.remove('scale1');
+                emergente.classList.add('scale0');
+                setTimeout(() => {
+                    emergente__grid.remove();
+                }, 200);
+            }, 2000);
+        }, 200);
+    }
 }

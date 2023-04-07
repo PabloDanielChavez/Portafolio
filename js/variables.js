@@ -3,6 +3,9 @@
 // Informacion de versiones
 export const informacionPortafolio__grid = document.querySelector('.informacion-portafolio__grid');
 
+// Emergente
+export const emergente = document.querySelector('.emergente');
+
 // Formulario de contacto
 export const bienvenida__navegacion = document.querySelector('.bienvenida__navegacion');
 export const bienvenida__principalbox = document.querySelector('.bienvenida__principal-box');
