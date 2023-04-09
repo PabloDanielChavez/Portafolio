@@ -19,21 +19,25 @@ import {
             input__nombre,
             input__correo,
             input__asunto,
-            emergente
+            emergente,
+            btnEnviar
         } from './variables.js';
-
 export function cargarIndex() {
     if(window.location.href === 'http://127.0.0.1:5500/index.html' || window.location.href === 'https://portafolio-pdc.netlify.app' || window.location.href === 'https://portafolio-pdc.netlify.app/' || window.location.href === 'https://portafolio-pdc.netlify.app/index.html') {
         btnContacto.addEventListener("click", formularioContacto);
         bienvenida__formulario.addEventListener("submit", validarFormulario);
-        mostrarEmergente("done", "Pagina cargada con exito.");
+        mostrarEmergente("check_circle", "Pagina cargada con exito.", 2000);
+    } else {
+        mostrarEmergente("error", "La pagina no a cargado con exito.", 2000);
     }
 }
 
 export function cargarInformacion() {
     if(window.location.href === 'http://127.0.0.1:5500/informacion.html' || window.location.href === 'https://portafolio-pdc.netlify.app/informacion.html' || window.location.href === 'https://portafolio-pdc.netlify.app/informacion') {
         cargarVersiones();
-        mostrarEmergente("done","Pagina cargada con exito.");
+        mostrarEmergente("check_circle","Pagina cargada con exito.", 2000);
+    } else {
+        mostrarEmergente("error", "La pagina no a cargado con exito.", 2000);
     }
 }
 
@@ -171,8 +175,10 @@ function mostrarInformacion( version, fechaInicio, fechaFin, tipo1, detalle1, ti
 function formularioContacto() {
     if(bienvenida__contacto.classList.value === "bienvenida__contacto") {
         mostrarContacto();
+        disabled(btnContacto, 500);
     } else {
         ocultarContacto();
+        disabled(btnContacto, 500);
     }
 };
 
@@ -235,23 +241,25 @@ async function validarFormulario(e) {
     const nombre = input__nombre.value;
     const correo = input__correo.value;
     const asunto = input__asunto.value;
-
+    const date = new Date();
+    const [month, day, year] = [date.getMonth(), date.getDate(), date.getFullYear()];
+    const [hour, minutes, seconds] = [date.getHours(), date.getMinutes(), date.getSeconds()];
     const contacto = {
         nombre, 
         correo, 
-        asunto
+        asunto,
+        fecha: ` ${year}-${month}-${day} ${hour}:${minutes}:${seconds}`
     }
 
     if( validar(contacto) ) {
-        mostrarEmergente("error", "¡Todos los campos son obligatorios!");
+        mostrarEmergente("error", "¡Todos los campos son obligatorios!", 2000);
         return;
     }
     await nuevoContacto(contacto);
-    mostrarEmergente("done", "¡Enviado correctamente!");
     setTimeout(() => {
         vaciarFormulario();
         formularioContacto();
-    }, 2000);
+    }, 4000);
 }
 
 function validar(obj) {
@@ -264,10 +272,17 @@ function vaciarFormulario() {
     input__asunto.value = "";
 }
 
-export function mostrarEmergente(tipo, texto) {
+export function mostrarEmergente(tipo, texto, tiempo) {
+    crearEmergente(tipo, texto, tiempo);
+}
 
-    const vld = document.querySelector('.emergente__grid');
-    if(!vld) {
+function crearEmergente(tipo, texto, tiempo) {
+        const panel__emergente = document.querySelector('.panel__emergente');
+
+        const emergente = document.createElement('DIV');
+        emergente.classList.add('emergente', 'scale0');
+        panel__emergente.appendChild(emergente);
+
         const emergente__grid = document.createElement('DIV');
         emergente__grid.classList.add('emergente__grid');
         emergente.appendChild(emergente__grid);
@@ -283,6 +298,15 @@ export function mostrarEmergente(tipo, texto) {
         } else if(tipo === "done") {
             iconoUno.classList.add("material-symbols-outlined", "icono--done");
             iconoUno.textContent = "done";
+        } else if(tipo === "check_circle") {
+            iconoUno.classList.add("material-symbols-outlined", "icono--done");
+            iconoUno.textContent = "check_circle";
+        } else if(tipo === "database") {
+            iconoUno.classList.add("material-symbols-outlined", "icono--error");
+            iconoUno.textContent = "database";
+        } else if(tipo === "send") {
+            iconoUno.classList.add("material-symbols-outlined", "icono--done");
+            iconoUno.textContent = "send";
         }
         emergente__header.appendChild(iconoUno);
     
@@ -293,6 +317,12 @@ export function mostrarEmergente(tipo, texto) {
             emergente__h3.textContent = `error`;
         } else if(tipo === "done") {
             emergente__h3.textContent = `Hecho`;
+        } else if(tipo === "check_circle") {
+            emergente__h3.textContent = `Cargado`;
+        } else if(tipo === "database") {
+            emergente__h3.textContent = `API`;
+        } else if(tipo === "send") {
+            emergente__h3.textContent = `Enviado`;
         }
         emergente__header.appendChild(emergente__h3);
     
@@ -303,6 +333,15 @@ export function mostrarEmergente(tipo, texto) {
         } else if(tipo === "done") {
             iconoDos.classList.add("material-symbols-outlined", "icono--done");
             iconoDos.textContent = "done";
+        } else if(tipo === "check_circle") {
+            iconoDos.classList.add("material-symbols-outlined", "icono--done");
+            iconoDos.textContent = "check_circle";
+        } else if(tipo === "database") {
+            iconoDos.classList.add("material-symbols-outlined", "icono--error");
+            iconoDos.textContent = "database";
+        } else if(tipo === "send") {
+            iconoDos.classList.add("material-symbols-outlined", "icono--done");
+            iconoDos.textContent = "send";
         }
         emergente__header.appendChild(iconoDos);
     
@@ -312,22 +351,26 @@ export function mostrarEmergente(tipo, texto) {
     
         const emergente__texto = document.createElement('p');
         emergente__texto.classList.add('emergente__texto');
-        emergente__texto.textContent = `${texto}`;
+        emergente__texto.innerHTML = `${texto}`;
         emergente__info.appendChild(emergente__texto);
     
-        
-        emergente.classList.remove('scale1');
-        emergente.classList.add('scale0');
         setTimeout(() => {
             emergente.classList.remove('scale0');
             emergente.classList.add('scale1');
+            disabled(btnEnviar, tiempo);
             setTimeout(() => {
                 emergente.classList.remove('scale1');
                 emergente.classList.add('scale0');
                 setTimeout(() => {
-                    emergente__grid.remove();
+                    emergente.remove();
                 }, 200);
-            }, 2000);
+            }, tiempo);
         }, 200);
-    }
+}
+
+export function disabled(elemento, tiempo) {
+    elemento.setAttribute('disabled', '');
+    setTimeout(() => {
+        elemento.removeAttribute('disabled');
+    }, tiempo);
 }

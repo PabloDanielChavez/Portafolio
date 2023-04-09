@@ -5,6 +5,7 @@ export const informacionPortafolio__grid = document.querySelector('.informacion-
 
 // Emergente
 export const emergente = document.querySelector('.emergente');
+export const vld = document.querySelector('.emergente__grid');
 
 // Formulario de contacto
 export const bienvenida__navegacion = document.querySelector('.bienvenida__navegacion');
@@ -18,6 +19,7 @@ export const bienvenida__ocupacion = document.querySelector('.bienvenida__ocupac
 export const bienvenida__formulario = document.querySelector('.bienvenida__formulario');
 export const bienvenida__contacto = document.querySelector('#btnContacto');
 export const btnContacto = document.querySelector('#btnContacto');
+export const btnEnviar = document.querySelector('#btnEnviar');
 
 export const input__nombre = document.querySelector('#input__nombre');
 export const input__correo = document.querySelector('#input__correo');

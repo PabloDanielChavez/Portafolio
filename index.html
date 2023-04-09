@@ -26,7 +26,7 @@
                 </nav>
             </img>
         </header>
-        <div class="emergente scale0"></div>
+        <div class="panel__emergente">asd</div>
         <main class="bienvenida">
             <div class="bienvenida__principal-box">
                 <div class="bienvenida__border-principal">
@@ -62,9 +62,9 @@
                             name="asunto" cols="0" rows="0"
                             placeholder="Asunto"></textarea>
                     </div>
-                    <button type="submit" class="bienvenida__contacto">Enviar</button>
+                    <button id="btnEnviar" type="submit" class="bienvenida__contacto">Enviar</button>
                 </form>
-                <span id="btnContacto" class="bienvenida__contacto">Contactar</span>
+                <button id="btnContacto" type="submit" class="bienvenida__contacto">Contactar</button>
                 <nav class="bienvenida__navegacion">
                     <a id="link__instagram" class="bienvenida__link-bienvenida" href="https://www.instagram.com/pablo.chavez20/">
                         <picture>
@@ -178,63 +178,102 @@
                 <div class="habilidades__grid">
                     <div class="habilidades__tecnicas">
                         <h3 class="habilidades__titulo-h3">Técnicas</h3>
-                        <div class="habilidades__tecnicas">
-                            <p class="habilidades__nombre">HTML</p>
-                            <div class="barra">
-                                <p class="barra__porcentaje">15%</p>
-                                <span class="barra__bar barra__bar--15"></span>
+                        <div class="habilidades__contenedor">
+                            <div class="habilidades__tecnicas">
+                                <p class="habilidades__nombre">HTML</p>
+                                <div class="barra">
+                                    <p class="barra__porcentaje">15%</p>
+                                    <span class="barra__bar barra__bar--15"></span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="habilidades__tecnicas">
-                            <p class="habilidades__nombre">CSS</p>
-                            <div class="barra">
-                                <p class="barra__porcentaje">15%</p>
-                                <span class="barra__bar barra__bar--15"></span>
+                            <div class="habilidades__tecnicas">
+                                <p class="habilidades__nombre">CSS</p>
+                                <div class="barra">
+                                    <p class="barra__porcentaje">15%</p>
+                                    <span class="barra__bar barra__bar--15"></span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="habilidades__tecnicas">
-                            <p class="habilidades__nombre">JavaScript</p>
-                            <div class="barra">
-                                <p class="barra__porcentaje">10%</p>
-                                <span class="barra__bar barra__bar--10"></span>
+                            <div class="habilidades__tecnicas">
+                                <p class="habilidades__nombre">SASS</p>
+                                <div class="barra">
+                                    <p class="barra__porcentaje">15%</p>
+                                    <span class="barra__bar barra__bar--15"></span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="habilidades__tecnicas">
-                            <p class="habilidades__nombre">PHP</p>
-                            <div class="barra">
-                                <p class="barra__porcentaje">0%</p>
-                                <span class="barra__bar barra__bar--0"></span>
+                            <div class="habilidades__tecnicas">
+                                <p class="habilidades__nombre">GIT</p>
+                                <div class="barra">
+                                    <p class="barra__porcentaje">5%</p>
+                                    <span class="barra__bar barra__bar--5"></span>
+                                </div>
+                            </div>
+                            <div class="habilidades__tecnicas">
+                                <p class="habilidades__nombre">JavaScript</p>
+                                <div class="barra">
+                                    <p class="barra__porcentaje">10%</p>
+                                    <span class="barra__bar barra__bar--10"></span>
+                                </div>
+                            </div>
+                            <div class="habilidades__tecnicas">
+                                <p class="habilidades__nombre">MySQL</p>
+                                <div class="barra">
+                                    <p class="barra__porcentaje">0%</p>
+                                    <span class="barra__bar barra__bar--0"></span>
+                                </div>
+                            </div>
+                            <div class="habilidades__tecnicas">
+                                <p class="habilidades__nombre">Node.js</p>
+                                <div class="barra">
+                                    <p class="barra__porcentaje">0%</p>
+                                    <span class="barra__bar barra__bar--0"></span>
+                                </div>
+                            </div>
+                            <div class="habilidades__tecnicas">
+                                <p class="habilidades__nombre">PHP</p>
+                                <div class="barra">
+                                    <p class="barra__porcentaje">0%</p>
+                                    <span class="barra__bar barra__bar--0"></span>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="habilidades__profesionales">
                         <h3 class="habilidades__titulo-h3">Profesionales</h3>
-                        <div class="habilidades__profesionales">
-                            <p class="habilidades__nombre">Comunicación</p>
-                            <div class="barra">
-                                <p class="barra__porcentaje">70%</p>
-                                <span class="barra__bar barra__bar--70"></span>
+                        <div class="habilidades__contenedor">
+                            <div class="habilidades__profesionales">
+                                <p class="habilidades__nombre">Comunicación</p>
+                                <div class="barra">
+                                    <p class="barra__porcentaje">70%</p>
+                                    <span class="barra__bar barra__bar--70"></span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="habilidades__profesionales">
-                            <p class="habilidades__nombre">Trabajo en equipo</p>
-                            <div class="barra">
-                                <p class="barra__porcentaje">90%</p>
-                                <span class="barra__bar barra__bar--90"></span>
+                            <div class="habilidades__profesionales">
+                                <p class="habilidades__nombre">Trabajo en equipo</p>
+                                <div class="barra">
+                                    <p class="barra__porcentaje">90%</p>
+                                    <span class="barra__bar barra__bar--90"></span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="habilidades__profesionales">
-                            <p class="habilidades__nombre">Creatividad</p>
-                            <div class="barra">
-                                <p class="barra__porcentaje">55%</p>
-                                <span class="barra__bar barra__bar--55"></span>
+                            <div class="habilidades__profesionales">
+                                <p class="habilidades__nombre">Creatividad</p>
+                                <div class="barra">
+                                    <p class="barra__porcentaje">55%</p>
+                                    <span class="barra__bar barra__bar--55"></span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="habilidades__profesionales">
-                            <p class="habilidades__nombre">Dedicación</p>
-                            <div class="barra">
-                                <p class="barra__porcentaje">80%</p>
-                                <span class="barra__bar barra__bar--80"></span>
+                            <div class="habilidades__profesionales">
+                                <p class="habilidades__nombre">Dedicación</p>
+                                <div class="barra">
+                                    <p class="barra__porcentaje">80%</p>
+                                    <span class="barra__bar barra__bar--80"></span>
+                                </div>
+                            </div>
+                            <div class="habilidades__profesionales">
+                                <p class="habilidades__nombre">Ingles</p>
+                                <div class="barra">
+                                    <p class="barra__porcentaje">0%</p>
+                                    <span class="barra__bar barra__bar--0"></span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -246,25 +285,25 @@
                 <h2 class="destacados__titulo-h2">Destacados</h2>
                 <p id="destacados-texto" class="destacados__resumen">Aquí podras visitar mis paginas destacadas, estas son destacadas por el numero de visitas que recibe, la cantidad de actualizaciones y la valoracion.</p>
                 <div class="destacados__grid">
-                    <a class="destacados__box" href="#">
+                    <a class="destacados__box" href="https://juanbarber.netlify.app/">
                         <picture>
-                            <source srcset="build/img/fondo-gales.avif" type="image/avif">
-                            <source srcset="build/img/fondo-gales.webp" type="image/webp">
-                            <source srcset="build/img/fondo-gales.jpg" type="image/jpg">
-                            <img class="destacados__imagen" loading="lazy" decoding="async" src="build/img/fondo-gales.jpg" lazyalt="imagen" alt="Fondo gales" width="auto" height="auto">
+                            <source srcset="build/img/proyectos/JuanBarber.avif" type="image/avif">
+                            <source srcset="build/img/proyectos/JuanBarber.webp" type="image/webp">
+                            <source srcset="build/img/proyectos/JuanBarber.jpg" type="image/jpg">
+                            <img class="destacados__imagen" loading="lazy" decoding="async" src="build/img/proyectos/JuanBarber.jpg" lazyalt="imagen" alt="Fondo gales" width="auto" height="auto">
                         </picture>
-                        <h3 class="destacados__h3">Pagina Ejemplo</h3>
-                        <p class="destacados__texto">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio commodi accusamus tempora rem dignissimos ut iste qui illum! Itaque maxime tempore tempora suscipit veniam voluptas, sed assumenda quae corrupti aliquid.</p>
+                        <h3 class="destacados__h3">Juan Barber</h3>
+                        <p class="destacados__texto">Juan Barber fue un proyecto que inicie para un cliente, el cual quería una página estática que mostrara los trabajos que él hacía.</p>
                     </a>
-                    <a class="destacados__box" href="#">
+                    <a class="destacados__box" href="https://portafolio-pablodanielchavez-0-0-5.netlify.app/">
                         <picture>
-                            <source srcset="build/img/fondo-gales.avif" type="image/avif">
-                            <source srcset="build/img/fondo-gales.webp" type="image/webp">
-                            <source srcset="build/img/fondo-gales.jpg" type="image/jpg">
-                            <img class="destacados__imagen" loading="lazy" decoding="async" src="build/img/fondo-gales.jpg" lazyalt="imagen" alt="Fondo gales" width="auto" height="auto">
+                            <source srcset="build/img/proyectos/portafolio002.avif" type="image/avif">
+                            <source srcset="build/img/proyectos/portafolio002.webp" type="image/webp">
+                            <source srcset="build/img/proyectos/portafolio002.jpg" type="image/jpg">
+                            <img class="destacados__imagen" loading="lazy" decoding="async" src="build/img/proyectos/portafolio002.jpg" lazyalt="imagen" alt="Fondo gales" width="auto" height="auto">
                         </picture>
-                        <h3 class="destacados__h3">Pagina Ejemplo</h3>
-                        <p class="destacados__texto">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio commodi accusamus tempora rem dignissimos ut iste qui illum! Itaque maxime tempore tempora suscipit veniam voluptas, sed assumenda quae corrupti aliquid.</p>
+                        <h3 class="destacados__h3">Portafolio v2</h3>
+                        <p class="destacados__texto">Version antigua de mi portafolio, este fue el segundo portafolio creado por mi, solo contaba con verificaciones de datos, recopilador de paginas, y informacion estatica.</p>
                     </a>
                 </div>
             </article>
