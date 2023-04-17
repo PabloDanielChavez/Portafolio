@@ -3,27 +3,129 @@ import {
             obtenerInformacion
         } from './API.js';
 
-import {    
+import {
             informacionPortafolio__grid,
-            bienvenida__navegacion,
-            bienvenida__principalbox,
+            tema,
+            emergente,
+            vld,
             bienvenida__borderprincipal,
             bienvenida__fotoperfilborde,
             bienvenida__fotoperfilprincipal,
             bienvenida__titulobienvenida,
             bienvenida__nombreh2,
-            bienvenida__ocupacion,
             bienvenida__formulario,
             bienvenida__contacto,
             btnContacto,
+            btnEnviar,
             input__nombre,
             input__correo,
             input__asunto,
-            emergente,
-            btnEnviar
+            header,
+            header__link,
+            pantallaDeCarga,
+            pantallaDeCarga__texto,
+            bienvenida,
+            bienvenida__principalBox,
+            bienvenida__fotoperfilBorde,
+            bienvenida__nombreH2,
+            bienvenida__ocupacion,
+            bienvenida__inputForm,
+            bienvenida__navegacion,
+            sobremi,
+            sobremi__tituloH2,
+            sobremi__resumen,
+            sobremi__tituloH3,
+            sobremi__detalle,
+            sobremi__interesBox,
+            sobremi__interesIconsNombre,
+            habilidades,
+            habilidades__tituloH2,
+            habilidades__resumen,
+            habilidades__tituloH3,
+            habilidades__nombre,
+            barra,
+            barra__porcentaje,
+            barra__bar,
+            destacados,
+            destacados__tituloH2,
+            destacados__resumen,
+            destacados__box,
+            destacados__texto,
+            servicios,
+            servicios__h2Servicios,
+            servicios__planesBox,
+            servicios__h3Servicios,
+            servicios__detalles,
+            servicios__opcion,
+            servicios__cantidad,
+            servicios__divisor,
+            servicios__descuento,
+            servicios__parrafo,
+            servicios__aqui,
+            footer,
+            footer__redes,
+            footer__lineaHorizontal,
+            footer__nombreH2,
+            footer__ocupacion,
+            footer__linkListado
         } from './variables.js';
+
+const temasClases = [
+    header,
+    header__link,
+    pantallaDeCarga,
+    pantallaDeCarga__texto,
+    bienvenida,
+    bienvenida__principalBox,
+    bienvenida__fotoperfilBorde,
+    bienvenida__nombreH2,
+    bienvenida__ocupacion,
+    bienvenida__inputForm,
+    bienvenida__navegacion,
+    sobremi,
+    sobremi__tituloH2,
+    sobremi__resumen,
+    sobremi__tituloH3,
+    sobremi__detalle,
+    sobremi__interesBox,
+    sobremi__interesIconsNombre,
+    habilidades,
+    habilidades__tituloH2,
+    habilidades__resumen,
+    habilidades__tituloH3,
+    habilidades__nombre,
+    barra,
+    barra__porcentaje,
+    barra__bar,
+    destacados,
+    destacados__tituloH2,
+    destacados__resumen,
+    destacados__box,
+    destacados__texto,
+    servicios,
+    servicios__h2Servicios,
+    servicios__planesBox,
+    servicios__h3Servicios,
+    servicios__detalles,
+    servicios__opcion,
+    servicios__cantidad,
+    servicios__divisor,
+    servicios__descuento,
+    servicios__parrafo,
+    servicios__aqui,
+    footer,
+    footer__redes,
+    footer__lineaHorizontal,
+    footer__nombreH2,
+    footer__ocupacion,
+    footer__linkListado
+]
+
+let tipoDeTema = "claro";
+
 export function cargarIndex() {
     if(window.location.href === 'http://127.0.0.1:5500/index.html' || window.location.href === 'https://portafolio-pdc.netlify.app' || window.location.href === 'https://portafolio-pdc.netlify.app/' || window.location.href === 'https://portafolio-pdc.netlify.app/index.html') {
+        tema.addEventListener("click", cambiarDeTema);
         btnContacto.addEventListener("click", formularioContacto);
         bienvenida__formulario.addEventListener("submit", validarFormulario);
         mostrarEmergente("check_circle", "Pagina cargada con exito.", 2000);
@@ -369,8 +471,45 @@ function crearEmergente(tipo, texto, tiempo) {
 }
 
 export function disabled(elemento, tiempo) {
-    elemento.setAttribute('disabled', '');
-    setTimeout(() => {
-        elemento.removeAttribute('disabled');
-    }, tiempo);
+    if(elemento) {
+        elemento.setAttribute('disabled', '');
+        setTimeout(() => {
+            elemento.removeAttribute('disabled');
+        }, tiempo);
+    }
+}
+
+export function cambiarDeTema() {
+    console.log(tipoDeTema);
+    if(tipoDeTema === "claro") {
+        removerClaro();
+        tipoDeTema = "oscuro";
+    } else {
+        removerOscuro();
+        tipoDeTema = "claro";
+    }
+}
+
+function removerClaro() {
+    tema.classList.remove("claro");
+    tema.classList.add("oscuro");
+    tema.textContent = "light_mode";
+    for (let i = 0; i < temasClases.length; i++) {
+    let temasO = temasClases[i]
+        for (let v = 0; v < temasO.length; v++) {
+            temasO[v].classList.remove('temaClaro');
+        }
+    }
+}
+
+function removerOscuro() {
+    tema.classList.remove("oscuro");
+    tema.classList.add("claro");
+    tema.textContent = "mode_night";
+    for (let i = 0; i < temasClases.length; i++) {
+    let temasO = temasClases[i]
+        for (let v = 0; v < temasO.length; v++) {
+            temasO[v].classList.add('temaClaro');
+        }
+    }
 }

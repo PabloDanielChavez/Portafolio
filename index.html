@@ -16,34 +16,37 @@
         <title>Portafolio PDC</title>
     </head>
     <body>
-        <header class="header" id="header">
+        <header class="header temaClaro" id="header">
             <div class="header__grid">
                 <!-- <div class="header__img__perfil" id="imagen__perfil"></div> -->
                 <a href="index.html"><h1 class="header__titulo-h1">Pablo</h1></a>
                 <nav class="header__nav">
-                    <a href="index.html" class="header__link">Inicio</a>
-                    <a href="informacion.html" class="header__link">Informacion</a
+                    <a href="index.html" class="header__link temaClaro">Inicio</a>
+                    <a href="informacion.html" class="header__link temaClaro">Informacion</a
                 </nav>
+                <span id="tema" class="tema material-symbols-outlined claro">light_mode</span>
             </img>
         </header>
-        <!-- <div class="pantallaDeCarga"></div> -->
+        <div id="pantallaDeCarga" class="pantallaDeCarga temaClaro">
+            <p class="pantallaDeCarga__texto temaClaro">Cargando...</p>
+        </div>
         <div class="panel__emergente"></div>
-        <main class="bienvenida">
-            <div class="bienvenida__principal-box">
+        <main class="bienvenida temaClaro">
+            <div class="bienvenida__principal-box temaClaro">
                 <div class="bienvenida__border-principal">
-                    <div class="bienvenida__fotoperfil-borde">
+                    <div class="bienvenida__fotoperfil-borde temaClaro">
                         <div class="bienvenida__fotoperfil-principal"></div>
                     </div>
                 </div>
                 <div class="bienvenida__titulo-bienvenida">
-                    <h3 class="bienvenida__nombre-h2">Pablo Daniel Chavez</h2>
-                    <span class="bienvenida__ocupacion">Aprendiz de desarrollo web</span>
+                    <h3 class="bienvenida__nombre-h2 temaClaro">Pablo Daniel Chavez</h2>
+                    <span class="bienvenida__ocupacion temaClaro">Aprendiz de desarrollo web</span>
                 </div>
                 <form id="formulario" class="bienvenida__formulario scale0">
                     <div class="bienvenida__boxForm">
                         <input
                             id="input__nombre"
-                            class="bienvenida__inputForm"
+                            class="bienvenida__inputForm temaClaro"
                             type="text"
                             placeholder="Nombre"
                         >
@@ -51,7 +54,7 @@
                     <div class="bienvenida__boxForm">
                         <input
                             id="input__correo"
-                            class="bienvenida__inputForm"
+                            class="bienvenida__inputForm temaClaro"
                             type="email"
                             placeholder="Correo"
                         >
@@ -59,14 +62,14 @@
                     <div class="bienvenida__boxForm">
                         <textarea
                             id="input__asunto"
-                            class="bienvenida__textareaForm"
+                            class="bienvenida__textareaForm temaClaro"
                             name="asunto" cols="0" rows="0"
                             placeholder="Asunto"></textarea>
                     </div>
                     <button id="btnEnviar" type="submit" class="bienvenida__contacto">Enviar</button>
                 </form>
                 <button id="btnContacto" type="submit" class="bienvenida__contacto">Contactar</button>
-                <nav class="bienvenida__navegacion">
+                <nav class="bienvenida__navegacion temaClaro">
                     <a id="link__instagram" class="bienvenida__link-bienvenida" href="https://www.instagram.com/pablo.chavez20/">
                         <picture>
                             <source srcset="build/img/iconos/icono-instagram-white.avif" type="image/avif">
@@ -94,186 +97,186 @@
                 </nav>
             </div>
         </main>
-        <section class="sobremi">
+        <section class="sobremi temaClaro">
             <div class="sobremi__panel">
-                <h2 class="sobremi__titulo-h2">Sobre mí</h2>
-                <p class="sobremi__resumen"><span  class="sobremi__span-hola">Hola soy Pablo</span id="sobremi-texto">, bienvenido a mi portafolio, soy estudiante autodidacta de programacion web, En esta pagina hay detalles sobre quien soy, mi conocimiento y mis trabajos</p>
+                <h2 class="sobremi__titulo-h2 temaClaro">Sobre mí</h2>
+                <p class="sobremi__resumen temaClaro"><span  class="sobremi__span-hola">Hola soy Pablo</span id="sobremi-texto">, bienvenido a mi portafolio, soy estudiante autodidacta de programacion web, En esta pagina hay detalles sobre quien soy, mi conocimiento y mis trabajos</p>
                 <div class="sobremi__grid">
                     <div class="sobremi__contacto">
-                        <h3 class="sobremi__titulo-h3">Datos personales</h3>
+                        <h3 class="sobremi__titulo-h3 temaClaro">Datos personales</h3>
                         <div class="sobremi__datos-box">
                             <div class="sobremi__dato">
                                 <p class="sobremi__opcion-dato">Fecha de nacimiento</p>
-                                <a class="sobremi__detalle" href="#">05/12/1999</a>
+                                <a class="sobremi__detalle temaClaro" href="#">05/12/1999</a>
                             </div>
                             <div class="sobremi__dato">
                                 <p class="sobremi__opcion-dato">Telefono</p>
-                                <a class="sobremi__detalle" href="tel:+54-911-6662-1017">+54-911-6662-1017</a>
+                                <a class="sobremi__detalle temaClaro" href="tel:+54-911-6662-1017">+54-911-6662-1017</a>
                             </div>
                             <div class="sobremi__dato">
                                 <p class="sobremi__opcion-dato">Correo</p>
-                                <a class="sobremi__detalle" href="#">pablo_daniel_chavez@outlook.es</a>
+                                <a class="sobremi__detalle temaClaro" href="#">pablo_daniel_chavez@outlook.es</a>
                             </div>
                             <div class="sobremi__dato">
                                 <p class="sobremi__opcion-dato">Sitio web</p>
-                                <a class="sobremi__detalle" href="https://portafolio-pdc.netlify.app/">www.portafolio-pdc.netlify.app</a>
+                                <a class="sobremi__detalle temaClaro" href="https://portafolio-pdc.netlify.app/">www.portafolio-pdc.netlify.app</a>
                             </div>
                             <div class="sobremi__dato">
                                 <p class="sobremi__opcion-dato">Vivo en</p>
-                                <a class="sobremi__detalle" href="https://goo.gl/maps/XxEwcjQFFGf6Gzme7">Buenos Aires - Argentina</a>
+                                <a class="sobremi__detalle temaClaro" href="https://goo.gl/maps/XxEwcjQFFGf6Gzme7">Buenos Aires - Argentina</a>
                             </div>
                             <div class="sobremi__dato">
                                 <p class="sobremi__opcion-dato">Estado del trabajo</p>
-                                <a class="sobremi__detalle" href="#">Freelance</a>
+                                <a class="sobremi__detalle temaClaro" href="#">Freelance</a>
                             </div>
                         </div>
                     </div>
                     <div class="sobremi__interes">
-                        <h3 class="sobremi__titulo-h3">interés</h3>
+                        <h3 class="sobremi__titulo-h3 temaClaro">interés</h3>
                         <div class="sobremi__interes-grid">
-                            <div class="sobremi__interes-box">
+                            <div class="sobremi__interes-box temaClaro">
                                 <span class="material-symbols-outlined sobremi__interes-icons">stadia_controller</span>
-                                <span class="sobremi__interes-icons-nombre">Juegos</span>
+                                <span class="sobremi__interes-icons-nombre temaClaro">Juegos</span>
                             </div>
-                            <div class="sobremi__interes-box">
+                            <div class="sobremi__interes-box temaClaro">
                                 <span class="material-symbols-outlined sobremi__interes-icons">headphones</span>
-                                <span class="sobremi__interes-icons-nombre">Musica</span>
+                                <span class="sobremi__interes-icons-nombre temaClaro">Musica</span>
                             </div>
-                            <div class="sobremi__interes-box">
+                            <div class="sobremi__interes-box temaClaro">
                                 <span class="material-symbols-outlined sobremi__interes-icons">movie</span>
-                                <span class="sobremi__interes-icons-nombre">Peliculas</span>
+                                <span class="sobremi__interes-icons-nombre temaClaro">Peliculas</span>
                             </div>
-                            <div class="sobremi__interes-box">
+                            <div class="sobremi__interes-box temaClaro">
                                 <span class="material-symbols-outlined sobremi__interes-icons">smartphone</span>
-                                <span class="sobremi__interes-icons-nombre">Celulares</span>
+                                <span class="sobremi__interes-icons-nombre temaClaro">Celulares</span>
                             </div>
-                            <div class="sobremi__interes-box">
+                            <div class="sobremi__interes-box temaClaro">
                                 <span class="material-symbols-outlined sobremi__interes-icons">menu_book</span>
-                                <span class="sobremi__interes-icons-nombre">Leer</span>
+                                <span class="sobremi__interes-icons-nombre temaClaro">Leer</span>
                             </div>
-                            <div class="sobremi__interes-box">
+                            <div class="sobremi__interes-box temaClaro">
                                 <span class="material-symbols-outlined sobremi__interes-icons">coffee</span>
-                                <span class="sobremi__interes-icons-nombre">Café</span>
+                                <span class="sobremi__interes-icons-nombre temaClaro">Café</span>
                             </div>
-                            <div class="sobremi__interes-box">
+                            <div class="sobremi__interes-box temaClaro">
                                 <span class="material-symbols-outlined sobremi__interes-icons">travel_explore</span>
-                                <span class="sobremi__interes-icons-nombre">Viajar</span>
+                                <span class="sobremi__interes-icons-nombre temaClaro">Viajar</span>
                             </div>
-                            <div class="sobremi__interes-box">
+                            <div class="sobremi__interes-box temaClaro">
                                 <span class="material-symbols-outlined sobremi__interes-icons">house</span>
-                                <span class="sobremi__interes-icons-nombre">Hogar</span>
+                                <span class="sobremi__interes-icons-nombre temaClaro">Hogar</span>
                             </div>
-                            <div class="sobremi__interes-box">
+                            <div class="sobremi__interes-box temaClaro">
                                 <span class="material-symbols-outlined sobremi__interes-icons">groups</span>
-                                <span class="sobremi__interes-icons-nombre">Amigos</span>
+                                <span class="sobremi__interes-icons-nombre temaClaro">Amigos</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="habilidades">
+        <section class="habilidades temaClaro">
             <div class="habilidades__panel">
-                <h2 class="habilidades__titulo-h2">Habilidades</h2>
-                <p id="habilidades-texto" class="habilidades__resumen">Estas son mis habilidades de trabajo, mi objetivo es llegar a un 100%, el cual este porcentaje es trabajar 5 años con cada uno de los lenguajes</p>
+                <h2 class="habilidades__titulo-h2 temaClaro">Habilidades</h2>
+                <p id="habilidades-texto" class="habilidades__resumen temaClaro">Estas son mis habilidades de trabajo, mi objetivo es llegar a un 100%, el cual este porcentaje es trabajar 5 años con cada uno de los lenguajes</p>
                 <div class="habilidades__grid">
                     <div class="habilidades__tecnicas">
-                        <h3 class="habilidades__titulo-h3">Técnicas</h3>
+                        <h3 class="habilidades__titulo-h3 temaClaro">Técnicas</h3>
                         <div class="habilidades__contenedor">
                             <div class="habilidades__tecnicas">
-                                <p class="habilidades__nombre">HTML</p>
-                                <div class="barra">
-                                    <p class="barra__porcentaje">15%</p>
-                                    <span class="barra__bar barra__bar--15"></span>
+                                <p class="habilidades__nombre  temaClaro">HTML</p>
+                                <div class="barra temaClaro">
+                                    <p class="barra__porcentaje temaClaro">15%</p>
+                                    <span class="barra__bar temaClaro barra__bar--15"></span>
                                 </div>
                             </div>
                             <div class="habilidades__tecnicas">
-                                <p class="habilidades__nombre">CSS</p>
-                                <div class="barra">
-                                    <p class="barra__porcentaje">15%</p>
-                                    <span class="barra__bar barra__bar--15"></span>
+                                <p class="habilidades__nombre  temaClaro">CSS</p>
+                                <div class="barra temaClaro">
+                                    <p class="barra__porcentaje temaClaro">15%</p>
+                                    <span class="barra__bar temaClaro barra__bar--15"></span>
                                 </div>
                             </div>
                             <div class="habilidades__tecnicas">
-                                <p class="habilidades__nombre">SASS</p>
-                                <div class="barra">
-                                    <p class="barra__porcentaje">15%</p>
-                                    <span class="barra__bar barra__bar--15"></span>
+                                <p class="habilidades__nombre  temaClaro">SASS</p>
+                                <div class="barra temaClaro">
+                                    <p class="barra__porcentaje temaClaro">15%</p>
+                                    <span class="barra__bar temaClaro barra__bar--15"></span>
                                 </div>
                             </div>
                             <div class="habilidades__tecnicas">
-                                <p class="habilidades__nombre">GIT</p>
-                                <div class="barra">
-                                    <p class="barra__porcentaje">5%</p>
-                                    <span class="barra__bar barra__bar--5"></span>
+                                <p class="habilidades__nombre  temaClaro">GIT</p>
+                                <div class="barra temaClaro">
+                                    <p class="barra__porcentaje temaClaro">5%</p>
+                                    <span class="barra__bar temaClaro barra__bar--5"></span>
                                 </div>
                             </div>
                             <div class="habilidades__tecnicas">
-                                <p class="habilidades__nombre">JavaScript</p>
-                                <div class="barra">
-                                    <p class="barra__porcentaje">10%</p>
-                                    <span class="barra__bar barra__bar--10"></span>
+                                <p class="habilidades__nombre  temaClaro">JavaScript</p>
+                                <div class="barra temaClaro">
+                                    <p class="barra__porcentaje temaClaro">10%</p>
+                                    <span class="barra__bar temaClaro barra__bar--10"></span>
                                 </div>
                             </div>
                             <div class="habilidades__tecnicas">
-                                <p class="habilidades__nombre">MySQL</p>
-                                <div class="barra">
-                                    <p class="barra__porcentaje">0%</p>
-                                    <span class="barra__bar barra__bar--0"></span>
+                                <p class="habilidades__nombre  temaClaro">MySQL</p>
+                                <div class="barra temaClaro">
+                                    <p class="barra__porcentaje temaClaro">0%</p>
+                                    <span class="barra__bar temaClaro barra__bar--0"></span>
                                 </div>
                             </div>
                             <div class="habilidades__tecnicas">
-                                <p class="habilidades__nombre">Node.js</p>
-                                <div class="barra">
-                                    <p class="barra__porcentaje">0%</p>
-                                    <span class="barra__bar barra__bar--0"></span>
+                                <p class="habilidades__nombre  temaClaro">Node.js</p>
+                                <div class="barra temaClaro">
+                                    <p class="barra__porcentaje temaClaro">0%</p>
+                                    <span class="barra__bar temaClaro barra__bar--0"></span>
                                 </div>
                             </div>
                             <div class="habilidades__tecnicas">
-                                <p class="habilidades__nombre">PHP</p>
-                                <div class="barra">
-                                    <p class="barra__porcentaje">0%</p>
-                                    <span class="barra__bar barra__bar--0"></span>
+                                <p class="habilidades__nombre  temaClaro">PHP</p>
+                                <div class="barra temaClaro">
+                                    <p class="barra__porcentaje temaClaro">0%</p>
+                                    <span class="barra__bar temaClaro barra__bar--0"></span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="habilidades__profesionales">
-                        <h3 class="habilidades__titulo-h3">Profesionales</h3>
+                        <h3 class="habilidades__titulo-h3 temaClaro">Profesionales</h3>
                         <div class="habilidades__contenedor">
                             <div class="habilidades__profesionales">
-                                <p class="habilidades__nombre">Comunicación</p>
-                                <div class="barra">
-                                    <p class="barra__porcentaje">70%</p>
-                                    <span class="barra__bar barra__bar--70"></span>
+                                <p class="habilidades__nombre  temaClaro">Comunicación</p>
+                                <div class="barra temaClaro">
+                                    <p class="barra__porcentaje temaClaro">70%</p>
+                                    <span class="barra__bar temaClaro barra__bar--70"></span>
                                 </div>
                             </div>
                             <div class="habilidades__profesionales">
-                                <p class="habilidades__nombre">Trabajo en equipo</p>
-                                <div class="barra">
-                                    <p class="barra__porcentaje">90%</p>
-                                    <span class="barra__bar barra__bar--90"></span>
+                                <p class="habilidades__nombre  temaClaro">Trabajo en equipo</p>
+                                <div class="barra temaClaro">
+                                    <p class="barra__porcentaje temaClaro">90%</p>
+                                    <span class="barra__bar temaClaro barra__bar--90"></span>
                                 </div>
                             </div>
                             <div class="habilidades__profesionales">
-                                <p class="habilidades__nombre">Creatividad</p>
-                                <div class="barra">
-                                    <p class="barra__porcentaje">55%</p>
-                                    <span class="barra__bar barra__bar--55"></span>
+                                <p class="habilidades__nombre  temaClaro">Creatividad</p>
+                                <div class="barra temaClaro">
+                                    <p class="barra__porcentaje temaClaro">55%</p>
+                                    <span class="barra__bar temaClaro barra__bar--55"></span>
                                 </div>
                             </div>
                             <div class="habilidades__profesionales">
-                                <p class="habilidades__nombre">Dedicación</p>
-                                <div class="barra">
-                                    <p class="barra__porcentaje">80%</p>
-                                    <span class="barra__bar barra__bar--80"></span>
+                                <p class="habilidades__nombre  temaClaro">Dedicación</p>
+                                <div class="barra temaClaro">
+                                    <p class="barra__porcentaje temaClaro">80%</p>
+                                    <span class="barra__bar temaClaro barra__bar--80"></span>
                                 </div>
                             </div>
                             <div class="habilidades__profesionales">
-                                <p class="habilidades__nombre">Ingles</p>
-                                <div class="barra">
-                                    <p class="barra__porcentaje">0%</p>
-                                    <span class="barra__bar barra__bar--0"></span>
+                                <p class="habilidades__nombre  temaClaro">Ingles</p>
+                                <div class="barra temaClaro">
+                                    <p class="barra__porcentaje temaClaro">0%</p>
+                                    <span class="barra__bar temaClaro barra__bar--0"></span>
                                 </div>
                             </div>
                         </div>
@@ -281,12 +284,12 @@
                 </div>
             </div>
         </section>
-        <section class="destacados">
+        <section class="destacados temaClaro">
             <article class="destacados__panel">
-                <h2 class="destacados__titulo-h2">Destacados</h2>
-                <p id="destacados-texto" class="destacados__resumen">Aquí podras visitar mis paginas destacadas, estas son destacadas por el numero de visitas que recibe, la cantidad de actualizaciones y la valoracion.</p>
+                <h2 class="destacados__titulo-h2 temaClaro">Destacados</h2>
+                <p id="destacados-texto" class="destacados__resumen temaClaro">Aquí podras visitar mis paginas destacadas, estas son destacadas por el numero de visitas que recibe, la cantidad de actualizaciones y la valoracion.</p>
                 <div class="destacados__grid">
-                    <a class="destacados__box" href="https://juanbarber.netlify.app/">
+                    <a class="destacados__box temaClaro" href="https://juanbarber.netlify.app/">
                         <picture>
                             <source srcset="build/img/proyectos/JuanBarber.avif" type="image/avif">
                             <source srcset="build/img/proyectos/JuanBarber.webp" type="image/webp">
@@ -294,9 +297,9 @@
                             <img class="destacados__imagen" loading="lazy" decoding="async" src="build/img/proyectos/JuanBarber.jpg" lazyalt="imagen" alt="Fondo gales" width="auto" height="auto">
                         </picture>
                         <h3 class="destacados__h3">Juan Barber</h3>
-                        <p class="destacados__texto">Juan Barber fue un proyecto que inicie para un cliente, el cual quería una página estática que mostrara los trabajos que él hacía.</p>
+                        <p class="destacados__texto temaClaro">Juan Barber fue un proyecto que inicie para un cliente, el cual quería una página estática que mostrara los trabajos que él hacía.</p>
                     </a>
-                    <a class="destacados__box" href="https://portafolio-pablodanielchavez-0-0-5.netlify.app/">
+                    <a class="destacados__box temaClaro" href="https://portafolio-pablodanielchavez-0-0-5.netlify.app/">
                         <picture>
                             <source srcset="build/img/proyectos/portafolio002.avif" type="image/avif">
                             <source srcset="build/img/proyectos/portafolio002.webp" type="image/webp">
@@ -304,75 +307,74 @@
                             <img class="destacados__imagen" loading="lazy" decoding="async" src="build/img/proyectos/portafolio002.jpg" lazyalt="imagen" alt="Fondo gales" width="auto" height="auto">
                         </picture>
                         <h3 class="destacados__h3">Portafolio v2</h3>
-                        <p class="destacados__texto">Version antigua de mi portafolio, este fue el segundo portafolio creado por mi, solo contaba con verificaciones de datos, recopilador de paginas, y informacion estatica.</p>
+                        <p class="destacados__texto temaClaro">Version antigua de mi portafolio, este fue el segundo portafolio creado por mi, solo contaba con verificaciones de datos, recopilador de paginas, y informacion estatica.</p>
                     </a>
                 </div>
             </article>
         </section>
-        <section class="servicios">
-            <h2 class="servicios__h2-servicios">Servicios</h2>
+        <section class="servicios temaClaro">
+            <h2 class="servicios__h2-servicios temaClaro">Servicios</h2>
             <div class="servicios__grid">
                 <div id="planes" class="servicios__planes">
-                    <div class="servicios__planes-box">
-                        <h3 class="servicios__h3-servicios">Basico</h3>
-                        <p class="servicios__detalles">Con este plan podras tener una web con 1 pagina</p>
+                    <div class="servicios__planes-box temaClaro">
+                        <h3 class="servicios__h3-servicios temaClaro">Basico</h3>
+                        <p class="servicios__detalles temaClaro">Con este plan podras tener una web con 1 pagina</p>
                         <div class="servicios__contenido">
-                            <span class="servicios__opcion">Paginas</span>
-                            <span class="servicios__cantidad">1</span>
+                            <span class="servicios__opcion temaClaro">Paginas</span>
+                            <span class="servicios__cantidad temaClaro">1</span>
                         </div>
                         <div class="servicios__contenido">
-                            <span class="servicios__opcion">Revisiones</span>
-                            <span class="servicios__cantidad">2</span>
-                        </div><span class="servicios__divisor"></span>
+                            <span class="servicios__opcion temaClaro">Revisiones</span>
+                            <span class="servicios__cantidad temaClaro">2</span>
+                        </div><span class="servicios__divisor temaClaro"></span>
                         <div class="servicios__pre">
                             <p class="servicios__precio"><span class="servicios__dolar">$</span>450</p>
-                            <span class="servicios__descuento">0% de descuento</span>
+                            <span class="servicios__descuento temaClaro">0% de descuento</span>
                         </div>
                     </div>
-                    <div class="servicios__planes-box">
-                        <h3 class="servicios__h3-servicios">Estandar</h3>
-                        <p class="servicios__detalles">Con este plan podras tener una web con hasta 3 paginas</p>
+                    <div class="servicios__planes-box temaClaro">
+                        <h3 class="servicios__h3-servicios temaClaro">Estandar</h3>
+                        <p class="servicios__detalles temaClaro">Con este plan podras tener una web con hasta 3 paginas</p>
                         <div class="servicios__contenido">
-                            <span class="servicios__opcion">Paginas</span>
-                            <span class="servicios__cantidad">3</span>
+                            <span class="servicios__opcion temaClaro">Paginas</span>
+                            <span class="servicios__cantidad temaClaro">3</span>
                         </div>
                         <div class="servicios__contenido">
-                            <span class="servicios__opcion">Revisiones</span>
-                            <span class="servicios__cantidad">3</span>
-                        </div><span class="servicios__divisor"></span>
+                            <span class="servicios__opcion temaClaro">Revisiones</span>
+                            <span class="servicios__cantidad temaClaro">3</span>
+                        </div><span class="servicios__divisor temaClaro"></span>
                         <div class="servicios__pre">
                             <p class="servicios__precio"><span class="servicios__dolar">$</span>1080</p>
-                            <span class="servicios__descuento">20% de descuento</span>
+                            <span class="servicios__descuento temaClaro">20% de descuento</span>
                         </div>
                     </div>
-                    <div class="servicios__planes-box">
-                        <h3 class="servicios__h3-servicios">Premium</h3>
-                        <p class="servicios__detalles">Este plan te permite tener hasta una web con hasta 5 paginas</p>
+                    <div class="servicios__planes-box temaClaro">
+                        <h3 class="servicios__h3-servicios temaClaro">Premium</h3>
+                        <p class="servicios__detalles temaClaro">Este plan te permite tener hasta una web con hasta 5 paginas</p>
                         <div class="servicios__contenido">
-                            <span class="servicios__opcion">Paginas</span>
+                            <span class="servicios__opcion temaClaro">Paginas</span>
                             <span class="servicios__cantidad">5</span>
                         </div>
                         <div class="servicios__contenido">
-                            <span class="servicios__opcion">Revisiones</span>
-                            <span class="servicios__cantidad">5</span>
-                        </div><span class="servicios__divisor"></span>
+                            <span class="servicios__opcion temaClaro">Revisiones</span>
+                            <span class="servicios__cantidad temaClaro">5</span>
+                        </div><span class="servicios__divisor temaClaro"></span>
                         <div class="servicios__pre">
                             <p class="servicios__precio"><span class="servicios__dolar">$</span>1700</p>
-                            <span class="servicios__descuento">25% de descuento</span>
+                            <span class="servicios__descuento temaClaro">25% de descuento</span>
                         </div>
                     </div>
                 </div>
                 <div class="servicios__personalizar">
                     <div class="servicios__personalizar-box">
-                        <p class="servicios__parrafo">Si quieres personalizar tu plan, puedes hacerlo<span class="servicios__aqui"> aquí</span></p>
+                        <p class="servicios__parrafo temaClaro">Si quieres personalizar tu plan, puedes hacerlo<span class="servicios__aqui temaClaro"> aquí</span></p>
                     </div>
                 </div>
             </div>
         </section>
-        <footer class="footer">
+        <footer class="footer temaClaro">
             <div class="footer__panel">
-                <nav class="footer__redes">
-                    <span class="footer__linea-horizontal"></span>
+                <nav class="footer__redes temaClaro">
                     <a id="link__instagram" class="footer__redsocialBox" href="https://www.instagram.com/pablo.chavez20/">
                         <picture>
                             <source srcset="build/img/iconos/icono-instagram-white.avif" type="image/avif">
@@ -397,17 +399,16 @@
                             <img class="footer__redsocial-img" loading="lazy" decoding="async" src="build/img/iconos/icono-youtube-white.jpg" lazyalt="imagen" alt="icono youtube white" width="auto" height="auto">
                         </picture>
                     </a>
-                    <span id="referenciaFooter" class="footer__linea-horizontal"></span>
                 </nav>
                 <div class="footer__titulo-footer">
-                    <h3 class="footer__nombre-h2">Pablo Daniel Chavez<span class="footer__ocupacion">Aprendiz de desarrollo web</span></h2>
+                    <h3 class="footer__nombre-h2 temaClaro">Pablo Daniel Chavez<span class="footer__ocupacion temaClaro">Aprendiz de desarrollo web</span></h2>
                 </div>
                 <div class="footer__listado">
-                    <a href="informacion.html" class="footer__link-listado">
+                    <a href="informacion.html" class="footer__link-listado temaClaro">
                         <p class="footer__link-nombre">Informacion</p>
                     </a>
                     <span class="footer__separacion-vertical"></span>
-                    <a href="recientes.html" class="footer__link-listado">
+                    <a href="recientes.html" class="footer__link-listado temaClaro">
                         <p class="footer__link-nombre">Recientes</p>
                     </a>
                 </div>
