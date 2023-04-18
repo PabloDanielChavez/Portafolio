@@ -5,22 +5,27 @@ import {
 
 import {
             informacionPortafolio__grid,
+            menu,
             tema,
+            inicio,
+            informacion,
             emergente,
             vld,
             bienvenida__borderprincipal,
+            formulario,
             bienvenida__fotoperfilborde,
             bienvenida__fotoperfilprincipal,
             bienvenida__titulobienvenida,
             bienvenida__nombreh2,
             bienvenida__formulario,
-            bienvenida__contacto,
             btnContacto,
             btnEnviar,
             input__nombre,
             input__correo,
             input__asunto,
             header,
+            header__menu,
+            headermenu,
             header__link,
             pantallaDeCarga,
             pantallaDeCarga__texto,
@@ -72,6 +77,8 @@ import {
 
 const temasClases = [
     header,
+    header__menu,
+    headermenu,
     header__link,
     pantallaDeCarga,
     pantallaDeCarga__texto,
@@ -121,10 +128,30 @@ const temasClases = [
     footer__linkListado
 ]
 
+const temasId = [
+    menu,
+    inicio,
+    informacion,
+    tema
+]
+
+const contacto = [
+    bienvenida__principalBox,
+    bienvenida__borderprincipal,
+    bienvenida__fotoperfilborde,
+    bienvenida__fotoperfilprincipal,
+    bienvenida__titulobienvenida,
+    bienvenida__nombreh2,
+    bienvenida__ocupacion,
+    formulario,
+    bienvenida__navegacion
+]
+
 let tipoDeTema = "claro";
 
 export function cargarIndex() {
     if(window.location.href === 'http://127.0.0.1:5500/index.html' || window.location.href === 'https://portafolio-pdc.netlify.app' || window.location.href === 'https://portafolio-pdc.netlify.app/' || window.location.href === 'https://portafolio-pdc.netlify.app/index.html') {
+        menu.addEventListener("click", expandMenu);
         tema.addEventListener("click", cambiarDeTema);
         btnContacto.addEventListener("click", formularioContacto);
         bienvenida__formulario.addEventListener("submit", validarFormulario);
@@ -137,6 +164,7 @@ export function cargarIndex() {
 export function cargarInformacion() {
     if(window.location.href === 'http://127.0.0.1:5500/informacion.html' || window.location.href === 'https://portafolio-pdc.netlify.app/informacion.html' || window.location.href === 'https://portafolio-pdc.netlify.app/informacion') {
         cargarVersiones();
+        menu.addEventListener("click", expandMenu);
         mostrarEmergente("check_circle","Pagina cargada con exito.", 2000);
     } else {
         mostrarEmergente("error", "La pagina no a cargado con exito.", 2000);
@@ -275,65 +303,32 @@ function mostrarInformacion( version, fechaInicio, fechaFin, tipo1, detalle1, ti
 
 // Muestra el formulario de contacto
 function formularioContacto() {
-    if(bienvenida__contacto.classList.value === "bienvenida__contacto") {
+    console.log(btnContacto.classList.value);
+    if(btnContacto.classList.value === "bienvenida__contacto") {
         mostrarContacto();
+        btnContacto.classList.add('activo');
         disabled(btnContacto, 500);
     } else {
         ocultarContacto();
+        btnContacto.classList.remove('activo');
         disabled(btnContacto, 500);
     }
 };
 
+
+
 function mostrarContacto() {
-    bienvenida__principalbox.classList.add("bienvenida__principal-box-activo");
-    bienvenida__principalbox.classList.remove("bienvenida__principal-box");
-    bienvenida__borderprincipal.classList.add("bienvenida__border-principal-activo");
-    bienvenida__borderprincipal.classList.remove("bienvenida__border-principal");
-    bienvenida__fotoperfilborde.classList.add("bienvenida__fotoperfil-borde-activo");
-    bienvenida__fotoperfilborde.classList.remove("bienvenida__fotoperfil-borde");
-    bienvenida__fotoperfilprincipal.classList.add("ienvenida__fotoperfil-principal-activo");
-    bienvenida__fotoperfilprincipal.classList.remove("ienvenida__fotoperfil-principal");
-    bienvenida__titulobienvenida.classList.add("bienvenida__titulo-bienvenida-activo");
-    bienvenida__titulobienvenida.classList.remove("bienvenida__titulo-bienvenida");
-    bienvenida__nombreh2.classList.add("bienvenida__nombre-h2-activo");
-    bienvenida__nombreh2.classList.remove("bienvenida__nombre-h2");
-    bienvenida__ocupacion.classList.add("bienvenida__ocupacion-activo");
-    bienvenida__ocupacion.classList.remove("bienvenida__ocupacion");
-    bienvenida__formulario.classList.add("bienvenida__formulario-activo");
-    bienvenida__formulario.classList.remove("bienvenida__formulario");
-    bienvenida__navegacion.classList.add("bienvenida__navegacion-activo");
-    bienvenida__navegacion.classList.remove("bienvenida__navegacion");
+    iterarArreglo("add", contacto, "activo");
     setTimeout(() => {
         bienvenida__formulario.classList.add("scale1");
         bienvenida__formulario.classList.remove("scale0");
     }, 1);
-    bienvenida__contacto.classList.add("bienvenida__contacto-activo");
-    bienvenida__contacto.classList.remove("bienvenida__contacto");
-    bienvenida__contacto.textContent = 'Ocultar';
+    btnContacto.textContent = 'Ocultar';
 }
 
 function ocultarContacto() {
-    bienvenida__principalbox.classList.remove("bienvenida__principal-box-activo");
-    bienvenida__principalbox.classList.add("bienvenida__principal-box");
-    bienvenida__borderprincipal.classList.remove("bienvenida__border-principal-activo");
-    bienvenida__borderprincipal.classList.add("bienvenida__border-principal");
-    bienvenida__fotoperfilborde.classList.remove("bienvenida__fotoperfil-borde-activo");
-    bienvenida__fotoperfilborde.classList.add("bienvenida__fotoperfil-borde");
-    bienvenida__fotoperfilprincipal.classList.remove("ienvenida__fotoperfil-principal-activo");
-    bienvenida__fotoperfilprincipal.classList.add("ienvenida__fotoperfil-principal");
-    bienvenida__titulobienvenida.classList.remove("bienvenida__titulo-bienvenida-activo");
-    bienvenida__titulobienvenida.classList.add("bienvenida__titulo-bienvenida");
-    bienvenida__nombreh2.classList.remove("bienvenida__nombre-h2-activo");
-    bienvenida__nombreh2.classList.add("bienvenida__nombre-h2");
-    bienvenida__ocupacion.classList.remove("bienvenida__ocupacion-activo");
-    bienvenida__ocupacion.classList.add("bienvenida__ocupacion");
-    bienvenida__formulario.classList.remove("bienvenida__formulario-activo", "scale1");
-    bienvenida__formulario.classList.add("bienvenida__formulario", "scale0");
-    bienvenida__navegacion.classList.remove("bienvenida__navegacion-activo");
-    bienvenida__navegacion.classList.add("bienvenida__navegacion");
-    bienvenida__contacto.classList.remove("bienvenida__contacto-activo");
-    bienvenida__contacto.classList.add("bienvenida__contacto");
-    bienvenida__contacto.textContent = 'Contactar';
+    iterarArreglo("remove", contacto, "activo");
+    btnContacto.textContent = 'Contactar';
 }
 
 // Validar Formulario Contacto
@@ -480,36 +475,68 @@ export function disabled(elemento, tiempo) {
 }
 
 export function cambiarDeTema() {
-    console.log(tipoDeTema);
     if(tipoDeTema === "claro") {
-        removerClaro();
+        // tema.classList.remove("claro");
+        // tema.classList.add("oscuro");
+        iterarArreglo("remove", temasClases, "temaClaro");
+        iterarId("remove", temasId, "temaClaro", "material-symbols-outlined");
         tipoDeTema = "oscuro";
+        tema.textContent = "mode_night";
     } else {
-        removerOscuro();
+        // tema.classList.remove("oscuro");
+        // tema.classList.add("claro");
+        iterarArreglo("add", temasClases, "temaClaro");
+        iterarId("add", temasId, "temaClaro", "material-symbols-outlined");
         tipoDeTema = "claro";
+        tema.textContent = "light_mode";
     }
 }
 
-function removerClaro() {
-    tema.classList.remove("claro");
-    tema.classList.add("oscuro");
-    tema.textContent = "light_mode";
-    for (let i = 0; i < temasClases.length; i++) {
-    let temasO = temasClases[i]
-        for (let v = 0; v < temasO.length; v++) {
-            temasO[v].classList.remove('temaClaro');
+export function iterarArreglo(tipo, arr, clase) {
+    for (let i = 0; i < arr.length; i++) {
+        let e = arr[i]
+        for (let v = 0; v < e.length; v++) {
+            if(tipo === "add") {
+                e[v].classList.add(clase);
+            } else if (tipo === "remove") {
+                e[v].classList.remove(clase);
+            }
         }
     }
 }
 
-function removerOscuro() {
-    tema.classList.remove("oscuro");
-    tema.classList.add("claro");
-    tema.textContent = "mode_night";
-    for (let i = 0; i < temasClases.length; i++) {
-    let temasO = temasClases[i]
-        for (let v = 0; v < temasO.length; v++) {
-            temasO[v].classList.add('temaClaro');
+export function iterarId(tipo, id, clase, oldClass) {
+    for (let i = 0; i < id.length; i++) {
+        if(tipo === "add") {
+            id[i].classList += ` ${clase}`;
+        } else if (tipo === "remove") {
+            id[i].classList = `${oldClass}`;
         }
     }
+}
+
+export function expandMenu() {
+    if(menu.className === 'material-symbols-outlined') {
+        menu.className += ' activo';
+        headermenu.className += ' activo';
+        setTimeout(() => {
+            menu.textContent = "close";
+        }, 500);
+    } else if(menu.className === 'material-symbols-outlined temaClaro') {
+        menu.className += ' activo';
+        headermenu.className += ' activo';
+        menu.textContent = "close";
+    } else {
+        if(menu.className === 'material-symbols-outlined temaClaro activo' || menu.className === 'material-symbols-outlined activo temaClaro') {
+            menu.className = 'material-symbols-outlined temaClaro';
+            headermenu.className = 'header__menu temaClaro';
+        } else {
+            menu.className = 'material-symbols-outlined';
+            headermenu.className = 'header__menu';
+        }
+        setTimeout(() => {
+            menu.textContent = "menu";
+        }, 500);
+    }
+
 }

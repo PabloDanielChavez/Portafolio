@@ -3,9 +3,12 @@
 // Informacion de versiones
 export const informacionPortafolio__grid = document.querySelector('.informacion-portafolio__grid');
 
-// temas
+// menu
 
-export const tema = document.querySelector('.tema');
+export const menu = document.querySelector("#menu");
+export const inicio = document.querySelector("#inicio");
+export const informacion = document.querySelector("#informacion");
+export const tema = document.querySelector('#tema');
 
 // Valores
 
@@ -14,14 +17,15 @@ export const emergente = document.querySelector('.emergente');
 export const vld = document.querySelector('.emergente__grid');
 
 // Formulario de contacto
-export const bienvenida__principalbox = document.querySelector('.bienvenida__principal-box');
-export const bienvenida__borderprincipal = document.querySelector('.bienvenida__border-principal');
-export const bienvenida__fotoperfilborde = document.querySelector('.bienvenida__fotoperfil-borde');
-export const bienvenida__fotoperfilprincipal = document.querySelector('.bienvenida__fotoperfil-principal');
-export const bienvenida__titulobienvenida = document.querySelector('.bienvenida__titulo-bienvenida');
-export const bienvenida__nombreh2 = document.querySelector('.bienvenida__nombre-h2');
+// export const bienvenida__principalbox = document.querySelector('#bienvenida__principal-box');
+export const formulario = document.querySelectorAll('#formulario');
+export const bienvenida__borderprincipal = document.querySelectorAll('.bienvenida__border-principal');
+export const bienvenida__fotoperfilborde = document.querySelectorAll('.bienvenida__fotoperfil-borde');
+export const bienvenida__fotoperfilprincipal = document.querySelectorAll('.bienvenida__fotoperfil-principal');
+export const bienvenida__titulobienvenida = document.querySelectorAll('.bienvenida__titulo-bienvenida');
+export const bienvenida__nombreh2 = document.querySelectorAll('.bienvenida__nombre-h2');
 export const bienvenida__formulario = document.querySelector('.bienvenida__formulario');
-export const bienvenida__contacto = document.querySelector('#btnContacto');
+export const bienvenida__contacto = document.querySelectorAll('.bienvenida__contacto');
 export const btnContacto = document.querySelector('#btnContacto');
 export const btnEnviar = document.querySelector('#btnEnviar');
 
@@ -31,7 +35,10 @@ export const input__asunto = document.querySelector('#input__asunto');
 
 //temas
 
+
 export const header = document.querySelectorAll(".header");
+export const header__menu = document.querySelectorAll(".header__menu");
+export const headermenu = document.querySelector(".header__menu");
 export const header__link = document.querySelectorAll(".header__link");
 export const pantallaDeCarga = document.querySelector("#pantallaDeCarga");
 export const pantallaDeCarga__texto = document.querySelectorAll(".pantallaDeCarga__texto");
