@@ -7,6 +7,7 @@ import {
             informacionPortafolio__grid,
             menu,
             tema,
+            btnTema,
             inicio,
             informacion,
             emergente,
@@ -147,12 +148,12 @@ const contacto = [
     bienvenida__navegacion
 ]
 
-let tipoDeTema = "claro";
+let tipoDeTema = "oscuro";
 
 export function cargarIndex() {
     if(window.location.href === 'http://127.0.0.1:5500/index.html' || window.location.href === 'https://portafolio-pdc.netlify.app' || window.location.href === 'https://portafolio-pdc.netlify.app/' || window.location.href === 'https://portafolio-pdc.netlify.app/index.html') {
         menu.addEventListener("click", expandMenu);
-        tema.addEventListener("click", cambiarDeTema);
+        btnTema.addEventListener("click", cambiarDeTema);
         btnContacto.addEventListener("click", formularioContacto);
         bienvenida__formulario.addEventListener("submit", validarFormulario);
         mostrarEmergente("check_circle", "Pagina cargada con exito.", 2000);
@@ -315,8 +316,6 @@ function formularioContacto() {
     }
 };
 
-
-
 function mostrarContacto() {
     iterarArreglo("add", contacto, "activo");
     setTimeout(() => {
@@ -476,19 +475,15 @@ export function disabled(elemento, tiempo) {
 
 export function cambiarDeTema() {
     if(tipoDeTema === "claro") {
-        // tema.classList.remove("claro");
-        // tema.classList.add("oscuro");
         iterarArreglo("remove", temasClases, "temaClaro");
-        iterarId("remove", temasId, "temaClaro", "material-symbols-outlined");
-        tipoDeTema = "oscuro";
+        validarArregloId("remove", temasId, "temaClaro");
         tema.textContent = "mode_night";
+        tipoDeTema = 'oscuro';
     } else {
-        // tema.classList.remove("oscuro");
-        // tema.classList.add("claro");
         iterarArreglo("add", temasClases, "temaClaro");
-        iterarId("add", temasId, "temaClaro", "material-symbols-outlined");
-        tipoDeTema = "claro";
+        validarArregloId("add", temasId, "temaClaro");
         tema.textContent = "light_mode";
+        tipoDeTema = 'claro';
     }
 }
 
@@ -505,38 +500,57 @@ export function iterarArreglo(tipo, arr, clase) {
     }
 }
 
-export function iterarId(tipo, id, clase, oldClass) {
-    for (let i = 0; i < id.length; i++) {
-        if(tipo === "add") {
-            id[i].classList += ` ${clase}`;
-        } else if (tipo === "remove") {
-            id[i].classList = `${oldClass}`;
+export function validarArregloId(tipo, id, clase) {
+    if(tipo === 'remove'){
+        for (let i = 0; i < id.length; i++) {
+            let e = id[i].classList;
+            e.remove(clase);
+        }
+    }
+    else if(tipo === 'add'){
+        for (let i = 0; i < id.length; i++) {
+            let e = id[i].classList;
+            e.add(clase);
         }
     }
 }
 
+var menuExpand = 'noExpand';
 export function expandMenu() {
-    if(menu.className === 'material-symbols-outlined') {
-        menu.className += ' activo';
-        headermenu.className += ' activo';
+    if(menuExpand == 'noExpand') {
+        validarArregloId('add', temasId, "activo");
+        headermenu.classList.add('activo');
+        menuExpand = 'expand';
         setTimeout(() => {
-            menu.textContent = "close";
-        }, 500);
-    } else if(menu.className === 'material-symbols-outlined temaClaro') {
-        menu.className += ' activo';
-        headermenu.className += ' activo';
-        menu.textContent = "close";
-    } else {
-        if(menu.className === 'material-symbols-outlined temaClaro activo' || menu.className === 'material-symbols-outlined activo temaClaro') {
-            menu.className = 'material-symbols-outlined temaClaro';
-            headermenu.className = 'header__menu temaClaro';
-        } else {
-            menu.className = 'material-symbols-outlined';
-            headermenu.className = 'header__menu';
-        }
+            menu.textContent = 'close';            
+        }, 300);
+    } else if(menuExpand === 'expand') {
+        validarArregloId('remove', temasId, "activo");
+        headermenu.classList.remove('activo');
+        menuExpand = 'noExpand';
         setTimeout(() => {
-            menu.textContent = "menu";
-        }, 500);
+            menu.textContent = 'menu';            
+        }, 300);
     }
-
 }
+
+// export function validarArregloId(tipo, id, clase) {
+//     console.log('Desde validarArregloId');
+//     for (let i = 0; i < id.length; i++) {
+//         let e = id[i].classList;
+//         // console.log(e);
+//         for (let v = 0; v < e.length; v++) {
+//             console.log(e[v]);
+//             if(e[v] === clase) {
+//                 console.log('Paso validacion de clase');
+//                 if(tipo === 'remove'){
+//                     e.remove(clase);
+//                     console.log('Paso validacion de remove');
+//                 } else if(tipo === 'add'){
+//                     e.add(clase);
+//                     console.log('Paso validacion de add');
+//                 }
+//             }
+//         }
+//     }
+// }

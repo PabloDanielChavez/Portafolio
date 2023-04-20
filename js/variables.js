@@ -9,6 +9,7 @@ export const menu = document.querySelector("#menu");
 export const inicio = document.querySelector("#inicio");
 export const informacion = document.querySelector("#informacion");
 export const tema = document.querySelector('#tema');
+export const btnTema = document.querySelector('#btnTema');
 
 // Valores
 
