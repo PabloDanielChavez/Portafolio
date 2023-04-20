@@ -7,9 +7,15 @@ import {
             informacionPortafolio__grid,
             menu,
             tema,
+            btnServicios,
+            btnSobreMi,
+            btnTranslate,
             btnTema,
             inicio,
             informacion,
+            spanServicios,
+            sobreMi,
+            translate,
             emergente,
             vld,
             bienvenida__borderprincipal,
@@ -133,6 +139,9 @@ const temasId = [
     menu,
     inicio,
     informacion,
+    spanServicios,
+    sobreMi,
+    translate,
     tema
 ]
 
@@ -150,9 +159,14 @@ const contacto = [
 
 let tipoDeTema = "oscuro";
 
+let menuExpand = 'noExpand';
+
 export function cargarIndex() {
     if(window.location.href === 'http://127.0.0.1:5500/index.html' || window.location.href === 'https://portafolio-pdc.netlify.app' || window.location.href === 'https://portafolio-pdc.netlify.app/' || window.location.href === 'https://portafolio-pdc.netlify.app/index.html') {
         menu.addEventListener("click", expandMenu);
+        btnServicios.addEventListener("click", noDisponible);
+        btnSobreMi.addEventListener("click", noDisponible);
+        btnTranslate.addEventListener("click", noDisponible);
         btnTema.addEventListener("click", cambiarDeTema);
         btnContacto.addEventListener("click", formularioContacto);
         bienvenida__formulario.addEventListener("submit", validarFormulario);
@@ -166,6 +180,10 @@ export function cargarInformacion() {
     if(window.location.href === 'http://127.0.0.1:5500/informacion.html' || window.location.href === 'https://portafolio-pdc.netlify.app/informacion.html' || window.location.href === 'https://portafolio-pdc.netlify.app/informacion') {
         cargarVersiones();
         menu.addEventListener("click", expandMenu);
+        btnServicios.addEventListener("click", noDisponible);
+        btnSobreMi.addEventListener("click", noDisponible);
+        btnTranslate.addEventListener("click", noDisponible);
+        btnTema.addEventListener("click", noDisponible);
         mostrarEmergente("check_circle","Pagina cargada con exito.", 2000);
     } else {
         mostrarEmergente("error", "La pagina no a cargado con exito.", 2000);
@@ -403,8 +421,11 @@ function crearEmergente(tipo, texto, tiempo) {
         } else if(tipo === "send") {
             iconoUno.classList.add("material-symbols-outlined", "icono--done");
             iconoUno.textContent = "send";
+        } else if(tipo === "palette") {
+            iconoUno.classList.add("material-symbols-outlined", "icono--done");
+            iconoUno.textContent = "palette";
         }
-        emergente__header.appendChild(iconoUno);
+            emergente__header.appendChild(iconoUno);
     
         const emergente__h3 = document.createElement('H3');
         emergente__h3.classList.add('emergente__h3');
@@ -419,6 +440,8 @@ function crearEmergente(tipo, texto, tiempo) {
             emergente__h3.textContent = `API`;
         } else if(tipo === "send") {
             emergente__h3.textContent = `Enviado`;
+        } else if(tipo === "palette") {
+            emergente__h3.textContent = `Tema`;
         }
         emergente__header.appendChild(emergente__h3);
     
@@ -438,6 +461,9 @@ function crearEmergente(tipo, texto, tiempo) {
         } else if(tipo === "send") {
             iconoDos.classList.add("material-symbols-outlined", "icono--done");
             iconoDos.textContent = "send";
+        } else if(tipo === "palette") {
+            iconoDos.classList.add("material-symbols-outlined", "icono--done");
+            iconoDos.textContent = "palette";
         }
         emergente__header.appendChild(iconoDos);
     
@@ -477,13 +503,15 @@ export function cambiarDeTema() {
     if(tipoDeTema === "claro") {
         iterarArreglo("remove", temasClases, "temaClaro");
         validarArregloId("remove", temasId, "temaClaro");
-        tema.textContent = "mode_night";
+        // tema.textContent = "mode_night";
         tipoDeTema = 'oscuro';
+        mostrarEmergente("palette", "¡Se ha cambiando el tema con exito!", 2000);
     } else {
         iterarArreglo("add", temasClases, "temaClaro");
         validarArregloId("add", temasId, "temaClaro");
-        tema.textContent = "light_mode";
+        // tema.textContent = "light_mode";
         tipoDeTema = 'claro';
+        mostrarEmergente("palette", "¡Se ha cambiando el tema con exito!", 2000);
     }
 }
 
@@ -515,7 +543,6 @@ export function validarArregloId(tipo, id, clase) {
     }
 }
 
-var menuExpand = 'noExpand';
 export function expandMenu() {
     if(menuExpand == 'noExpand') {
         validarArregloId('add', temasId, "activo");
@@ -532,6 +559,10 @@ export function expandMenu() {
             menu.textContent = 'menu';            
         }, 300);
     }
+}
+
+export function noDisponible() {
+    mostrarEmergente("error", "Esta opción no está disponible" + `<br/>¡inténtalo más tarde!`, 2000);
 }
 
 // export function validarArregloId(tipo, id, clase) {

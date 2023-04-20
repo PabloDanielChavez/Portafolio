@@ -6,9 +6,18 @@ export const informacionPortafolio__grid = document.querySelector('.informacion-
 // menu
 
 export const menu = document.querySelector("#menu");
-export const inicio = document.querySelector("#inicio");
-export const informacion = document.querySelector("#informacion");
+
+
+export const inicio = document.querySelector('#inicio');
+export const informacion = document.querySelector('#informacion');
+export const spanServicios = document.querySelector('#spanServicios');
+export const sobreMi = document.querySelector('#sobreMi');
+export const translate = document.querySelector('#translate');
 export const tema = document.querySelector('#tema');
+
+export const btnServicios = document.querySelector('#btnServicios');
+export const btnSobreMi = document.querySelector('#btnSobreMi');
+export const btnTranslate = document.querySelector('#btnTranslate');
 export const btnTema = document.querySelector('#btnTema');
 
 // Valores
