@@ -9,7 +9,7 @@ import {
 } from './variables.js';
 
 (function () {
-    alert("El portafolio está obsoleto, Se está trabajando en una nueva versión.");
+    // alert("El portafolio está obsoleto, Se está trabajando en una nueva versión.");
     if (window.location.href === 'http://127.0.0.1:5500/index.html' || window.location.href === 'https://portafolio-pdc.netlify.app' || window.location.href === 'https://portafolio-pdc.netlify.app/' || window.location.href === 'https://portafolio-pdc.netlify.app/index.html') {
         document.addEventListener("DOMContentLoaded", cargarIndex);
         setTimeout(() => {
