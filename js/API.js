@@ -1,5 +1,5 @@
-import { mostrarEmergente, disabled } from "./funciones.js";
-import { btnEnviar } from "./variables.js";
+import { mostrarEmergente, disabled } from "./funciones-min.js";
+import { btnEnviar } from "./variables-min.js";
 
 const urlInformacion = "http://localhost:4000/informacion";
 const urlContactos = "http://localhost:4000/contactos";
@@ -19,10 +19,10 @@ export const nuevoContacto = async contacto => {
     try {
         disabled(btnEnviar, 4500);
         await fetch(urlContactos, {
-            method: 'POST', 
+            method: 'POST',
             body: JSON.stringify(contacto), // data puede ser string o un objeto
-            headers:{
-              'Content-Type': 'application/json' // Y le decimos que los datos se enviaran como JSON
+            headers: {
+                'Content-Type': 'application/json' // Y le decimos que los datos se enviaran como JSON
             }
         });
         mostrarEmergente("send", "¡Enviado correctamente!", 2000);
